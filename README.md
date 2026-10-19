@@ -8,7 +8,7 @@ Echo is a cross-platform desktop application that provides simple, privacy-focus
 
 ## Why Echo?
 
-Handy was created to fill the gap for a truly open source, extensible speech-to-text tool. As stated on [handy.computer](https://handy.computer):
+Echo was created to fill the gap for a truly open source, extensible speech-to-text tool.
 
 - **Free**: Accessibility tooling belongs in everyone's hands, not behind a paywall
 - **Open Source**: Together we can build further. Extend Echo for yourself and contribute to something bigger
@@ -34,13 +34,10 @@ The process is entirely local:
 
 ### Installation
 
-1. Download the latest release from the [releases page](https://github.com/cjpais/Handy/releases) or the [website](https://handy.computer)
-   - **macOS**: Also available via [Homebrew cask](https://formulae.brew.sh/cask/handy): `brew install --cask handy`
-   - **Windows**: Also available via [winget](https://github.com/microsoft/winget-pkgs): `winget install cjpais.Handy` \
-     **Note:** The Homebrew cask and winget package are not maintained by the Echo developers.
+1. Download the latest release from the [releases page](https://github.com/noclaudesubscription-max/Echo/releases)
    - **Debian/Ubuntu**: Install the downloaded `.deb` with APT so required dependencies are installed automatically:
      ```bash
-     sudo apt install ./Handy_*.deb
+     sudo apt install ./Echo_*.deb
      ```
      Do not use `dpkg -i` unless the dependencies are already installed. If you already used it, run `sudo apt --fix-broken install`.
 2. Install the application
@@ -65,7 +62,7 @@ For detailed build instructions including platform-specific requirements, see [B
     <img src="sponsor-images/epicenter.png" alt="Epicenter" width="120" height="120">
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://boltai.com?utm_source=handy">
+  <a href="https://boltai.com?utm_source=echo">
     <img src="sponsor-images/boltai.jpg" alt="Bolt AI" width="120" height="120">
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -76,11 +73,7 @@ For detailed build instructions including platform-specific requirements, see [B
 
 ## Integrations
 
-<a href="https://www.raycast.com/mattiacolombomc/handy" title="Install Handy Raycast Extension"><img src="https://www.raycast.com/mattiacolombomc/handy/install_button@2x.png?v=1.1" height="64" style="height: 64px;" alt="Install handy Raycast Extension" /></a>
-
-Control Handy from [Raycast](https://www.raycast.com) — start/stop recording, browse transcript history, manage dictionary, switch models and languages.
-
-[Source](https://github.com/mattiacolombomc/raycast-handy) · by [@mattiacolombomc](https://github.com/mattiacolombomc)
+No integrations yet — contributions welcome!
 
 ### Debug Mode
 
@@ -96,35 +89,35 @@ Echo supports command-line flags for controlling a running instance and customiz
 **Remote control flags** (sent to an already-running instance via the single-instance plugin):
 
 ```bash
-handy --toggle-transcription    # Toggle recording on/off
-handy --toggle-post-process     # Toggle recording with post-processing on/off
-handy --cancel                  # Cancel the current operation
+echo --toggle-transcription    # Toggle recording on/off
+echo --toggle-post-process     # Toggle recording with post-processing on/off
+echo --cancel                  # Cancel the current operation
 ```
 
 **Startup flags:**
 
 ```bash
-handy --start-hidden            # Start without showing the main window
-handy --no-tray                 # Start without the system tray icon
-handy --debug                   # Enable debug mode with verbose logging
-handy --help                    # Show all available flags
+echo --start-hidden            # Start without showing the main window
+echo --no-tray                 # Start without the system tray icon
+echo --debug                   # Enable debug mode with verbose logging
+echo --help                    # Show all available flags
 ```
 
 Flags can be combined for autostart scenarios:
 
 ```bash
-handy --start-hidden --no-tray
+echo --start-hidden --no-tray
 ```
 
 > **macOS tip:** When Echo is installed as an app bundle, invoke the binary directly:
 >
 > ```bash
-> /Applications/Handy.app/Contents/MacOS/Handy --toggle-transcription
+> /Applications/Echo.app/Contents/MacOS/Echo --toggle-transcription
 > ```
 
 ## Known Issues & Current Limitations
 
-This project is actively being developed and has some [known issues](https://github.com/cjpais/Handy/issues). We believe in transparency about the current state:
+This project is actively being developed and has some [known issues](https://github.com/noclaudesubscription-max/Echo/issues). We believe in transparency about the current state:
 
 ### Bluetooth Headset Microphones (macOS)
 
@@ -151,7 +144,7 @@ For reliable text input on Linux, install the appropriate tool for your display 
 | Both           | `dotool`         | `sudo apt install dotool` (requires `input` group) |
 
 - **X11**: Install `xdotool` for both direct typing and clipboard paste shortcuts
-- **Ubuntu 26.04**: Has Wayland display server by default. `wtype` does not work, you need to install `ydotool` and configure systemd as described [here](https://github.com/cjpais/Handy/pull/557#issuecomment-3781249267).
+- **Ubuntu 26.04**: Has Wayland display server by default. `wtype` does not work, you need to install `ydotool` and configure systemd accordingly.
 - **Wayland**: Install `wtype` (preferred) or `dotool` for text input to work correctly
 - **dotool setup**: Requires adding your user to the `input` group: `sudo usermod -aG input $USER` (then log out and back in)
 
@@ -184,7 +177,7 @@ Without these tools, Echo falls back to enigo which may have limited compatibili
   1. Open **Settings > Keyboard > Keyboard Shortcuts > Custom Shortcuts**
   2. Click the **+** button to add a new shortcut
   3. Set the **Name** to `Toggle Echo Transcription`
-  4. Set the **Command** to `handy --toggle-transcription`
+  4. Set the **Command** to `echo --toggle-transcription`
   5. Click **Set Shortcut** and press your desired key combination (e.g., `Super+O`)
 
   **KDE Plasma:**
@@ -192,14 +185,14 @@ Without these tools, Echo falls back to enigo which may have limited compatibili
   2. Click **Edit > New > Global Shortcut > Command/URL**
   3. Name it `Toggle Echo Transcription`
   4. In the **Trigger** tab, set your desired key combination
-  5. In the **Action** tab, set the command to `handy --toggle-transcription`
+  5. In the **Action** tab, set the command to `echo --toggle-transcription`
 
   **Sway / i3:**
 
   Add to your config file (`~/.config/sway/config` or `~/.config/i3/config`):
 
   ```ini
-  bindsym $mod+o exec handy --toggle-transcription
+  bindsym $mod+o exec echo --toggle-transcription
   ```
 
   **Hyprland:**
@@ -207,26 +200,26 @@ Without these tools, Echo falls back to enigo which may have limited compatibili
   Add to your config file (`~/.config/hypr/hyprland.conf`):
 
   ```ini
-  bind = $mainMod, O, exec, handy --toggle-transcription
+  bind = $mainMod, O, exec, echo --toggle-transcription
   ```
 
 - You can also trigger Echo externally via Unix signals or the CLI flags, which lets Wayland window managers or other hotkey daemons keep ownership of keybindings:
 
   | Action                                    | Trigger                                                  |
   | ----------------------------------------- | -------------------------------------------------------- |
-  | Toggle transcription                      | `pkill -USR2 -n handy` or `handy --toggle-transcription` |
-  | Toggle transcription with post-processing | `handy --toggle-post-process`                            |
+  | Toggle transcription                      | `pkill -USR2 -n echo` or `echo --toggle-transcription` |
+  | Toggle transcription with post-processing | `echo --toggle-post-process`                            |
 
   Example Sway config:
 
   ```ini
-  bindsym $mod+o exec pkill -USR2 -n handy
-  bindsym $mod+p exec handy --toggle-post-process
+  bindsym $mod+o exec pkill -USR2 -n echo
+  bindsym $mod+p exec echo --toggle-post-process
   ```
 
   `pkill` here simply delivers the signal—it does not terminate the process.
 
-  > **Behavior change:** older releases also accepted `SIGUSR1` for toggling transcription with post-processing. WebKitGTK — the webview engine embedded in Handy on Linux — uses SIGUSR1 internally to coordinate JavaScript garbage collection, so listening for it caused phantom recordings and interrupted dictations every few minutes ([#1660](https://github.com/cjpais/Handy/issues/1660)). Handy no longer listens for SIGUSR1 on Linux; the post-processing toggle is still available via `handy --toggle-post-process`. **Remove any `pkill -USR1` bindings**: the signal is now delivered straight to WebKit's internal handler and can crash the app.
+  > **Behavior change:** older releases also accepted `SIGUSR1` for toggling transcription with post-processing. WebKitGTK — the webview engine embedded in Echo on Linux — uses SIGUSR1 internally to coordinate JavaScript garbage collection, so listening for it caused phantom recordings and interrupted dictations every few minutes. Echo no longer listens for SIGUSR1 on Linux; the post-processing toggle is still available via `echo --toggle-post-process`. **Remove any `pkill -USR1` bindings**: the signal is now delivered straight to WebKit's internal handler and can crash the app.
 
 **Overlay & Pasting Issues (Linux):**
 
@@ -239,26 +232,26 @@ Without these tools, Echo falls back to enigo which may have limited compatibili
 
 Echo release artifacts are signed with Tauri's updater signature format. The public key is stored in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json) under `plugins.updater.pubkey`.
 
-To verify a release manually, set `ARTIFACT` to the filename you downloaded, save the `pubkey` value from `src-tauri/tauri.conf.json` to `handy.pub.b64`, then decode the public key and matching `.sig` file from base64 and verify the artifact with `minisign`:
+To verify a release manually, set `ARTIFACT` to the filename you downloaded, save the `pubkey` value from `src-tauri/tauri.conf.json` to `echo.pub.b64`, then decode the public key and matching `.sig` file from base64 and verify the artifact with `minisign`:
 
 ```bash
 # Replace with the file you downloaded
-ARTIFACT="Handy_0.8.1_amd64.AppImage"
+ARTIFACT="Echo_0.9.8_amd64.AppImage"
 
 python3 - "$ARTIFACT" <<'PY'
 import base64, pathlib, sys
 
 artifact = sys.argv[1]
 
-pub = pathlib.Path("handy.pub.b64").read_text().strip()
-pathlib.Path("handy.pub").write_bytes(base64.b64decode(pub))
+pub = pathlib.Path("echo.pub.b64").read_text().strip()
+pathlib.Path("echo.pub").write_bytes(base64.b64decode(pub))
 
 sig = pathlib.Path(f"{artifact}.sig").read_text().strip()
 pathlib.Path(f"{artifact}.minisig").write_bytes(base64.b64decode(sig))
 PY
 
 minisign -Vm "$ARTIFACT" \
-  -p handy.pub \
+  -p echo.pub \
   -x "$ARTIFACT.minisig"
 ```
 
@@ -274,7 +267,7 @@ Do not use `gpg` for these `.sig` files.
 
 ### Previous Clipboard Content Is Pasted Instead of the Transcription
 
-If the transcription is correct in **History** but Handy inserts text you copied earlier, see [issue #502](https://github.com/cjpais/Handy/issues/502). With the standard clipboard paste method, Handy restores your previous clipboard after a fixed delay. Under load, the receiving application may read the clipboard only after that restoration.
+If the transcription is correct in **History** but Echo inserts text you copied earlier. With the standard clipboard paste method, Echo restores your previous clipboard after a fixed delay. Under load, the receiving application may read the clipboard only after that restoration.
 
 1. Open Echo's settings window and press `Cmd+Shift+D` (macOS) or `Ctrl+Shift+D` (Windows/Linux) to reveal **Debug**.
 2. On **macOS and Windows**, try **Reliable Paste (Beta)** in Debug with a clipboard paste method selected. It uses clipboard read notifications to delay restoration instead of relying on the standard fixed delay. Test it in the application where the problem occurs; it is still experimental.
@@ -296,9 +289,9 @@ If you're behind a proxy, firewall, or in a restricted network environment where
 
 The typical paths are:
 
-- **macOS**: `~/Library/Application Support/com.pais.handy/`
-- **Windows**: `C:\Users\{username}\AppData\Roaming\com.pais.handy\`
-- **Linux**: `~/.config/com.pais.handy/`
+- **macOS**: `~/Library/Application Support/com.echo.app/`
+- **Windows**: `C:\Users\{username}\AppData\Roaming\com.echo.app\`
+- **Linux**: `~/.config/com.echo.app/`
 
 #### Step 2: Create Models Directory
 
@@ -306,10 +299,10 @@ Inside your app data directory, create a `models` folder if it doesn't already e
 
 ```bash
 # macOS/Linux
-mkdir -p ~/Library/Application\ Support/com.pais.handy/models
+mkdir -p ~/Library/Application\ Support/com.echo.app/models
 
 # Windows (PowerShell)
-New-Item -ItemType Directory -Force -Path "$env:APPDATA\com.pais.handy\models"
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\com.echo.app\models"
 ```
 
 #### Step 3: Download Model Files
@@ -390,12 +383,12 @@ Echo uses `gtk-layer-shell` for its recording overlay and links against it at ru
 
 If it is already installed and you still see startup problems, try reinstalling it (e.g. `sudo pacman -S gtk-layer-shell` again) in case the library files were corrupted by a partial upgrade.
 
-**2. Disable the GTK layer shell overlay (`HANDY_NO_GTK_LAYER_SHELL`)**
+**2. Disable the GTK layer shell overlay (`ECHO_NO_GTK_LAYER_SHELL`)**
 
 If installing the library does not help, you can skip `gtk-layer-shell` initialization entirely as a workaround. On some compositors (notably KDE Plasma under Wayland) it has been reported to interact poorly with the recording overlay. With this variable set, the overlay falls back to a regular always-on-top window:
 
 ```bash
-HANDY_NO_GTK_LAYER_SHELL=1 handy
+ECHO_NO_GTK_LAYER_SHELL=1 echo
 ```
 
 **3. Configure WebKit DMA-BUF rendering (`WEBKIT_DISABLE_DMABUF_RENDERER`)**
@@ -403,13 +396,13 @@ HANDY_NO_GTK_LAYER_SHELL=1 handy
 Echo disables the WebKitGTK DMA-BUF renderer by default on Linux because it can cause blank windows or crashes on some GPU/driver combinations. Explicit environment-variable values are preserved, including in the Nix package. To explicitly keep the renderer disabled:
 
 ```bash
-WEBKIT_DISABLE_DMABUF_RENDERER=1 handy
+WEBKIT_DISABLE_DMABUF_RENDERER=1 echo
 ```
 
-Some users on WebKitGTK 2.54 report a flickering or partially drawn recording overlay with the renderer disabled ([#2166](https://github.com/cjpais/Handy/issues/2166)). If affected, try opting out of the default workaround:
+Some users on WebKitGTK 2.54 report a flickering or partially drawn recording overlay with the renderer disabled. If affected, try opting out of the default workaround:
 
 ```bash
-WEBKIT_DISABLE_DMABUF_RENDERER=0 handy
+WEBKIT_DISABLE_DMABUF_RENDERER=0 echo
 ```
 
 This allows WebKit to use the renderer when supported, but can reintroduce the GPU/driver-specific crashes described above. Remove the override or use `=1` if that happens.
@@ -421,12 +414,12 @@ Fully quit Echo, including its tray instance, before testing either value. Runni
 Set the variable in the environment of the launcher that actually starts Echo. Shell profile exports may not apply to desktop-menu or autostart launches. If you launch Echo from a `.desktop` file, you can prefix the `Exec=` line, e.g.:
 
 ```ini
-Exec=env HANDY_NO_GTK_LAYER_SHELL=1 handy
+Exec=env ECHO_NO_GTK_LAYER_SHELL=1 echo
 ```
 
 Echo's built-in autostart rewrites its generated desktop entry, so editing that entry is not a durable workaround. For autostart, use an appropriate session/service environment, or disable Echo's built-in autostart and manage your own startup entry with the required variable.
 
-If a workaround helps you, please [open an issue](https://github.com/cjpais/Handy/issues) describing your distro, desktop environment, and session type — that information helps us narrow down the underlying bug.
+If a workaround helps you, please [open an issue](https://github.com/noclaudesubscription-max/Echo/issues) describing your distro, desktop environment, and session type — that information helps us narrow down the underlying bug.
 
 ### Empty recording overlay on Hyprland / Omarchy
 
@@ -434,39 +427,37 @@ If the recording overlay is empty or bordered, fully quit Echo and launch a
 [native installation](BUILD.md#linux-install-from-source) with Wayland enabled:
 
 ```bash
-env -u HANDY_NO_GTK_LAYER_SHELL GDK_BACKEND=wayland handy
+env -u ECHO_NO_GTK_LAYER_SHELL GDK_BACKEND=wayland echo
 ```
 
 If this works, apply `GDK_BACKEND=wayland` only to Echo's launcher. This
 workaround does not work with the 0.9.6 AppImage, which forces X11.
 
-### Vulkan Overlays and Capture Tools on Windows (`HANDY_KEEP_VULKAN_IMPLICIT_LAYERS`)
+### Vulkan Overlays and Capture Tools on Windows (`ECHO_KEEP_VULKAN_IMPLICIT_LAYERS`)
 
-On Windows, Handy asks the Vulkan loader to skip implicit layers to avoid crashes caused by overlay and capture hooks ([#2049](https://github.com/cjpais/Handy/issues/2049)). GPU acceleration remains enabled; this does not change system-wide settings.
+On Windows, Echo asks the Vulkan loader to skip implicit layers to avoid crashes caused by overlay and capture hooks. GPU acceleration remains enabled; this does not change system-wide settings.
 
 To opt out for GPU selection or debugging tools, fully quit Echo (including the tray icon), then run both commands in the same PowerShell window:
 
 ```powershell
-$env:HANDY_KEEP_VULKAN_IMPLICIT_LAYERS = "1"
-& "$env:ProgramFiles\Handy\handy.exe"
+$env:ECHO_KEEP_VULKAN_IMPLICIT_LAYERS = "1"
+& "$env:ProgramFiles\Echo\echo.exe"
 ```
 
 Adjust the executable path if needed. This override only applies to apps launched from that PowerShell session, not the Start menu. Echo also preserves any existing `VK_LOADER_LAYERS_DISABLE` value.
 
 ### How to Contribute
 
-1. **Check existing issues** at [github.com/cjpais/Handy/issues](https://github.com/cjpais/Handy/issues)
+1. **Check existing issues** at [github.com/noclaudesubscription-max/Echo/issues](https://github.com/noclaudesubscription-max/Echo/issues)
 2. **Fork the repository** and create a feature branch
 3. **Test thoroughly** on your target platform
 4. **Submit a pull request** with clear description of changes
-5. **Join the discussion** - reach out at [contact@handy.computer](mailto:contact@handy.computer)
 
 The goal is to create both a useful tool and a foundation for others to build upon—a well-patterned, simple codebase that serves the community.
 
 ## Related Projects
 
-- **[Handy CLI](https://github.com/cjpais/handy-cli)** - The original Python command-line version
-- **[handy.computer](https://handy.computer)** - Project website with demos and documentation
+- **[Handy](https://github.com/cjpais/handy)** - The upstream project Echo is based on
 
 ## License
 
