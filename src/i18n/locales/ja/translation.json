@@ -1,7 +1,6 @@
 {
   "tray": {
     "settings": "設定…",
-    "checkUpdates": "アップデートを確認…",
     "copyLastTranscript": "最新の文字起こしをコピー",
     "unloadModel": "モデルをアンロード",
     "model": "モデル",
@@ -28,7 +27,7 @@
     "customModelDescription": "公式サポート対象外",
     "migration": {
       "title": "モデルの更新が必要です",
-      "description": "Handy は新しい種類のモデルを使用するようになりました。文字起こしを続けるには、新しいバージョンをダウンロードしてください。古いバージョンは削除されます。",
+      "description": "Echo は新しい種類のモデルを使用するようになりました。文字起こしを続けるには、新しいバージョンをダウンロードしてください。古いバージョンは削除されます。",
       "replaces": "{{name}} の後継",
       "oldFormat": "旧形式",
       "failed": "ダウンロードに失敗しました",
@@ -69,7 +68,7 @@
     },
     "permissions": {
       "title": "権限が必要です",
-      "description": "Handy が正常に動作するにはいくつかの権限が必要です。",
+      "description": "Echo が正常に動作するにはいくつかの権限が必要です。",
       "microphone": {
         "title": "マイクへのアクセス",
         "description": "文字起こしのためにあなたの声を聞くために必要です。"
@@ -130,7 +129,7 @@
       "deleteActiveConfirm": "{{modelName}}は現在使用中のモデルです。削除すると、新しいモデルを選択するまで文字起こしが停止します。本当に削除しますか?",
       "deleteTitle": "モデルを削除",
       "retiredNotice": {
-        "title": "古いモデルは Handy で使用できなくなりました",
+        "title": "古いモデルは Echo で使用できなくなりました",
         "description": "コンピューター上で {{size}} を使用しています。",
         "delete": "モデルを削除",
         "deleted": "古いモデルを削除しました",
@@ -147,13 +146,13 @@
       "searchPlaceholder": "モデルを名前で検索…",
       "rescan": {
         "label": "再スキャン",
-        "tooltip": "Handy を使わずに models フォルダーまたは Hugging Face キャッシュに追加されたモデルを再スキャンします"
+        "tooltip": "Echo を使わずに models フォルダーまたは Hugging Face キャッシュに追加されたモデルを再スキャンします"
       }
     },
     "general": {
       "title": "一般",
       "shortcut": {
-        "title": "Handy ショートカット",
+        "title": "Echo ショートカット",
         "description": "音声録音を開始するキーボードショートカットを設定",
         "loading": "ショートカットを読み込み中…",
         "none": "ショートカットが設定されていません",
@@ -261,11 +260,11 @@
       },
       "autostart": {
         "label": "起動時に実行",
-        "description": "コンピューターにログインしたときに Handy を自動的に起動。"
+        "description": "コンピューターにログインしたときに Echo を自動的に起動。"
       },
       "showTrayIcon": {
         "label": "トレイアイコンを表示",
-        "description": "システムトレイに Handy のアイコンを表示します。"
+        "description": "システムトレイに Echo のアイコンを表示します。"
       },
       "overlay": {
         "style": {
@@ -481,11 +480,6 @@
         "lineCount": "{{count}}行",
         "empty": "ログを待機中… アプリが出力すると、ここにエントリが表示されます。"
       },
-      "updateChecks": {
-        "label": "アップデートを確認",
-        "description": "Handy の新しいバージョンを自動的にチェック",
-        "lockedDescription": "システム設定により無効化されています (HANDY_DISABLE_UPDATER)"
-      },
       "soundTheme": {
         "label": "サウンドテーマ",
         "description": "録音開始・停止フィードバックのサウンドテーマを選択"
@@ -561,7 +555,7 @@
       },
       "keyboardDiagnostic": {
         "title": "キーボード診断",
-        "description": "キーボードイベントが Handy に届いているかを確認します。記録されるのはイベント数のみで、押したキーの内容は記録されません。",
+        "description": "キーボードイベントが Echo に届いているかを確認します。記録されるのはイベント数のみで、押したキーの内容は記録されません。",
         "run": "10 秒間の診断を実行",
         "running": "待機中… ショートカットを数回押してください (例: Option+Space)",
         "secureInputLabel": "Secure Input",
@@ -575,16 +569,9 @@
         "mouse": "マウス",
         "verdictBlocked": "Secure Input がキーイベントをブロックしています。解消されるまで、通常キーを含むショートカットは動作しません。",
         "verdictSuspicious": "修飾キーのイベントは届いていますが、キーイベントは届いていません。Secure Input は無効と報告されているのに、何かがキーを抑制しています。GitHub で報告してください。",
-        "verdictOk": "キーイベントは Handy に正常に届いています。",
+        "verdictOk": "キーイベントは Echo に正常に届いています。",
         "verdictNoEvents": "イベントを検出できませんでした。テスト中にキーを押しましたか？",
         "failed": "診断に失敗しました: {{error}}"
-      },
-      "whatsNewPreview": {
-        "title": "新機能をプレビュー",
-        "description": "最新の同梱リリースノートを既読にせずに開く",
-        "button": "プレビュー",
-        "noNotes": "同梱リリースノートが見つかりません",
-        "error": "リリースノートのプレビューに失敗しました"
       },
       "onboardingPreview": {
         "title": "オンボーディングをプレビュー",
@@ -596,35 +583,9 @@
     },
     "about": {
       "title": "概要",
-      "version": {
-        "title": "バージョン",
-        "description": "Handy の現在のバージョン"
-      },
       "appDataDirectory": {
         "title": "アプリデータディレクトリ",
-        "description": "Handy がデータを保存する場所"
-      },
-      "sourceCode": {
-        "title": "ソースコード",
-        "description": "ソースコードを見て貢献する",
-        "button": "GitHub で見る"
-      },
-      "supportDevelopment": {
-        "title": "開発を支援",
-        "description": "Handy の開発を支援してください",
-        "button": "寄付する"
-      },
-      "acknowledgments": {
-        "title": "謝辞",
-        "ggml": {
-          "title": "ggml",
-          "description": "オンデバイス機械学習推論のための高性能テンソルライブラリ",
-          "details": "Handy のローカルの音声からテキストへの文字起こしは transcribe.cpp と ggml を基盤としています。Georgi Gerganov 氏と貢献者の皆様の素晴らしい仕事に感謝します。"
-        }
-      },
-      "whatsNewUpdates": {
-        "label": "新機能を表示",
-        "description": "Handy のアップデート後にリリースノートを表示"
+        "description": "Echo がデータを保存する場所"
       }
     }
   },
@@ -654,7 +615,7 @@
     "noOptionsFound": "オプションが見つかりません"
   },
   "accessibility": {
-    "permissionsDescription": "Handy が文字起こしテキストを入力するには、アクセシビリティ権限が必要です。",
+    "permissionsDescription": "Echo が文字起こしテキストを入力するには、アクセシビリティ権限が必要です。",
     "openSettings": "システム設定を開く"
   },
   "errors": {
@@ -677,11 +638,11 @@
   },
   "appLanguage": {
     "title": "アプリの言語",
-    "description": "Handy インターフェースの言語を変更"
+    "description": "Echo インターフェースの言語を変更"
   },
   "theme": {
     "title": "アプリのテーマ",
-    "description": "Handy をシステムのテーマに合わせるか、ライトまたはダークで固定するかを選択します",
+    "description": "Echo をシステムのテーマに合わせるか、ライトまたはダークで固定するかを選択します",
     "options": {
       "system": "システム",
       "light": "ライト",
@@ -693,9 +654,6 @@
     "processing": "処理中…",
     "loadingModel": "モデルを読み込み中…"
   },
-  "whatsNew": {
-    "title": "Handy v{{version}} の新機能"
-  },
   "secureInput": {
     "blockedWithCulprit_one": "{{name}} が1個のショートカットをブロックしている可能性があります",
     "blockedWithCulprit_other": "{{name}} が{{count}}個のショートカットをブロックしている可能性があります",
@@ -703,7 +661,6 @@
     "blockedNoCulprit_other": "macOS が一時的に{{count}}個のショートカットをブロックしています",
     "recorderBlockedWithCulprit": "{{name}} がショートカットの変更をブロックしている可能性があります",
     "recorderBlockedNoCulprit": "macOS が一時的にショートカットの変更をブロックしています",
-    "learnMore": "解決方法",
     "recorderBlocked": "現在ショートカットを記録できません。macOS の Secure Input がキーイベントをブロックしています。先に Secure Input の警告を解消してください。",
     "dismiss": "閉じる"
   }

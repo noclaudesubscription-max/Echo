@@ -301,7 +301,7 @@ impl SoundTheme {
 }
 
 /// UI appearance mode. `System` follows the OS `prefers-color-scheme`; `Light`
-/// and `Dark` force one of the two palettes Handy already ships.
+/// and `Dark` force one of the two palettes Echo already ships.
 #[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, Type)]
 #[serde(rename_all = "snake_case")]
 pub enum Theme {
@@ -1264,14 +1264,6 @@ pub fn update_checks_forced_disabled() -> bool {
     use std::sync::OnceLock;
     static IS_UPDATER_DISABLED: OnceLock<bool> = OnceLock::new();
     *IS_UPDATER_DISABLED.get_or_init(|| utils::env_flag_enabled("HANDY_DISABLE_UPDATER"))
-}
-
-/// Effective updater state: the user's stored preference, overridden to `false`
-/// while `HANDY_DISABLE_UPDATER` is set. Callers deciding whether to actually
-/// check for updates must use this rather than reading `update_checks_enabled`
-/// directly, so the forced-off state never leaks into the persisted setting.
-pub fn update_checks_effectively_enabled(settings: &AppSettings) -> bool {
-    settings.update_checks_enabled && !update_checks_forced_disabled()
 }
 
 pub fn write_settings(app: &AppHandle, settings: AppSettings) {

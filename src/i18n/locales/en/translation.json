@@ -1,7 +1,6 @@
 {
   "tray": {
     "settings": "Settings...",
-    "checkUpdates": "Check for Updates...",
     "copyLastTranscript": "Copy Last Transcript",
     "unloadModel": "Unload Model",
     "model": "Model",
@@ -28,7 +27,7 @@
     "customModelDescription": "Not officially supported",
     "migration": {
       "title": "Your models need an update",
-      "description": "Handy now uses a newer kind of model. Download the new version to keep transcribing. Old versions will be removed.",
+      "description": "Echo now uses a newer kind of model. Download the new version to keep transcribing. Old versions will be removed.",
       "replaces": "Replaces {{name}}",
       "oldFormat": "Old format",
       "failed": "Download failed",
@@ -69,7 +68,7 @@
     },
     "permissions": {
       "title": "Permissions Required",
-      "description": "Handy needs a couple of permissions to work properly.",
+      "description": "Echo needs a couple of permissions to work properly.",
       "microphone": {
         "title": "Microphone Access",
         "description": "Required to hear your voice for transcription."
@@ -126,7 +125,7 @@
     "general": {
       "title": "General",
       "shortcut": {
-        "title": "Handy Shortcuts",
+        "title": "Echo Shortcuts",
         "description": "Configure keyboard shortcuts to trigger speech-to-text recording",
         "loading": "Loading shortcuts...",
         "none": "No shortcuts configured",
@@ -184,7 +183,7 @@
       "deleteActiveConfirm": "{{modelName}} is your active model. Deleting it will stop transcriptions until you select a new model. Are you sure?",
       "deleteTitle": "Delete Model",
       "retiredNotice": {
-        "title": "Old models no longer work with Handy",
+        "title": "Old models no longer work with Echo",
         "description": "They're taking up {{size}} on your computer.",
         "delete": "Delete models",
         "deleted": "Deleted old models",
@@ -197,7 +196,7 @@
       },
       "rescan": {
         "label": "Rescan",
-        "tooltip": "Rescan for models added to the models folder or Hugging Face cache outside Handy"
+        "tooltip": "Rescan for models added to the models folder or Hugging Face cache outside Echo"
       },
       "noModelsMatch": "No models match this filter."
     },
@@ -261,11 +260,11 @@
       },
       "autostart": {
         "label": "Launch on Startup",
-        "description": "Automatically start Handy when you log in to your computer."
+        "description": "Automatically start Echo when you log in to your computer."
       },
       "showTrayIcon": {
         "label": "Show Tray Icon",
-        "description": "Display the Handy icon in the system tray."
+        "description": "Display the Echo icon in the system tray."
       },
       "overlay": {
         "style": {
@@ -481,18 +480,6 @@
         "lineCount": "{{count}} lines",
         "empty": "Waiting for logs… Entries appear here as the app emits them."
       },
-      "updateChecks": {
-        "label": "Check for Updates",
-        "description": "Automatically check for new versions of Handy",
-        "lockedDescription": "Disabled by system configuration (HANDY_DISABLE_UPDATER)"
-      },
-      "whatsNewPreview": {
-        "title": "Preview What's New",
-        "description": "Open the latest bundled release note without marking it as seen",
-        "button": "Preview",
-        "noNotes": "No bundled release notes found",
-        "error": "Failed to preview release notes"
-      },
       "onboardingPreview": {
         "title": "Preview Onboarding",
         "description": "Preview onboarding screens without changing permissions, models, or completion state",
@@ -575,7 +562,7 @@
       },
       "keyboardDiagnostic": {
         "title": "Keyboard Diagnostic",
-        "description": "Checks whether keyboard events reach Handy. Only event counts are recorded — never which keys you press.",
+        "description": "Checks whether keyboard events reach Echo. Only event counts are recorded — never which keys you press.",
         "run": "Run 10s diagnostic",
         "running": "Listening… press your shortcut a few times (e.g. Option+Space)",
         "secureInputLabel": "Secure Input",
@@ -589,42 +576,16 @@
         "mouse": "Mouse",
         "verdictBlocked": "Secure Input is blocking key events — keyed shortcuts cannot work until it is resolved.",
         "verdictSuspicious": "Modifier events arrived but no key events — something is suppressing keys even though Secure Input reports disabled. Please report this on GitHub.",
-        "verdictOk": "Key events are reaching Handy normally.",
+        "verdictOk": "Key events are reaching Echo normally.",
         "verdictNoEvents": "No events captured — did you press any keys during the test?",
         "failed": "Diagnostic failed: {{error}}"
       }
     },
     "about": {
       "title": "About",
-      "version": {
-        "title": "Version",
-        "description": "Current version of Handy"
-      },
-      "whatsNewUpdates": {
-        "label": "Show What's New",
-        "description": "Show release notes after Handy updates"
-      },
       "appDataDirectory": {
         "title": "App Data Directory",
-        "description": "Location where Handy stores its data"
-      },
-      "sourceCode": {
-        "title": "Source Code",
-        "description": "View source code and contribute",
-        "button": "View on GitHub"
-      },
-      "supportDevelopment": {
-        "title": "Support Development",
-        "description": "Help us continue building Handy",
-        "button": "Donate"
-      },
-      "acknowledgments": {
-        "title": "Acknowledgments",
-        "ggml": {
-          "title": "ggml",
-          "description": "High-performance tensor library for on-device machine learning inference",
-          "details": "Handy's local speech-to-text is built on transcribe.cpp and ggml. Thanks to the amazing work by Georgi Gerganov and contributors."
-        }
+        "description": "Location where Echo stores its data"
       }
     }
   },
@@ -643,9 +604,6 @@
     "portableUpdateBrowseMessage": "Portable installs cannot be updated automatically. Download the latest version for your system from GitHub Releases and install it to the same folder — your Data/ folder (settings, models, recordings) is kept in place.",
     "portableUpdateBrowseButton": "Open GitHub Releases"
   },
-  "whatsNew": {
-    "title": "New in Handy v{{version}}"
-  },
   "common": {
     "loading": "Loading...",
     "delete": "Delete",
@@ -657,7 +615,7 @@
     "noOptionsFound": "No options found"
   },
   "accessibility": {
-    "permissionsDescription": "Handy needs accessibility permissions to type transcribed text.",
+    "permissionsDescription": "Echo needs accessibility permissions to type transcribed text.",
     "openSettings": "Open System Settings"
   },
   "errors": {
@@ -680,11 +638,11 @@
   },
   "appLanguage": {
     "title": "Application Language",
-    "description": "Change the language of the Handy interface"
+    "description": "Change the language of the Echo interface"
   },
   "theme": {
     "title": "Application Theme",
-    "description": "Choose whether Handy follows your system theme or stays light or dark",
+    "description": "Choose whether Echo follows your system theme or stays light or dark",
     "options": {
       "system": "System",
       "light": "Light",
@@ -703,7 +661,6 @@
     "blockedNoCulprit_other": "macOS is temporarily blocking {{count}} shortcuts",
     "recorderBlockedWithCulprit": "{{name}} may be blocking shortcut changes",
     "recorderBlockedNoCulprit": "macOS is temporarily blocking shortcut changes",
-    "learnMore": "How to fix",
     "recorderBlocked": "Can't record shortcuts right now — macOS Secure Input is blocking key events. Resolve the Secure Input warning first.",
     "dismiss": "Dismiss"
   }

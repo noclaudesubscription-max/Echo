@@ -1,4 +1,5 @@
 import React from "react";
+import { Slider as HeroSlider } from "@heroui/react";
 import { SettingContainer } from "./SettingContainer";
 import { ResetButton } from "./ResetButton";
 
@@ -35,10 +36,6 @@ export const Slider: React.FC<SliderProps> = ({
   onReset,
   isResetting = false,
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(parseFloat(e.target.value));
-  };
-
   return (
     <SettingContainer
       title={label}
@@ -50,24 +47,23 @@ export const Slider: React.FC<SliderProps> = ({
     >
       <div className="w-full">
         <div className="flex items-center space-x-1 h-6">
-          <input
-            type="range"
+          <HeroSlider
             aria-label={label}
-            min={min}
-            max={max}
+            className="flex-grow"
+            minValue={min}
+            maxValue={max}
             step={step}
             value={value}
-            onChange={handleChange}
-            disabled={disabled}
-            className="flex-grow h-2 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-logo-primary disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{
-              background: `linear-gradient(to right, var(--color-background-ui) ${
-                ((value - min) / (max - min)) * 100
-              }%, rgba(128, 128, 128, 0.2) ${
-                ((value - min) / (max - min)) * 100
-              }%)`,
+            onChange={(next) => {
+              if (typeof next === "number") onChange(next);
             }}
-          />
+            isDisabled={disabled}
+          >
+            <HeroSlider.Track>
+              <HeroSlider.Fill />
+              <HeroSlider.Thumb />
+            </HeroSlider.Track>
+          </HeroSlider>
           {showValue && (
             <span className="text-sm font-medium text-text/90 w-12 text-end">
               {formatValue(value)}

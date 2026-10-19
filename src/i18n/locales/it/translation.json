@@ -1,7 +1,6 @@
 {
   "tray": {
     "settings": "Impostazioni...",
-    "checkUpdates": "Verifica aggiornamenti...",
     "copyLastTranscript": "Copia l'ultima trascrizione",
     "unloadModel": "Rilascia modello",
     "model": "Modello",
@@ -28,7 +27,7 @@
     "customModelDescription": "Non ufficialmente supportato",
     "migration": {
       "title": "I tuoi modelli devono essere aggiornati",
-      "description": "Handy ora usa un nuovo tipo di modello. Scarica la nuova versione per continuare a trascrivere. Le versioni precedenti verranno rimosse.",
+      "description": "Echo ora usa un nuovo tipo di modello. Scarica la nuova versione per continuare a trascrivere. Le versioni precedenti verranno rimosse.",
       "replaces": "Sostituisce {{name}}",
       "oldFormat": "Formato precedente",
       "failed": "Download non riuscito",
@@ -69,7 +68,7 @@
     },
     "permissions": {
       "title": "Permessi Richiesti",
-      "description": "Handy ha bisogno di alcuni permessi per funzionare correttamente.",
+      "description": "Echo ha bisogno di alcuni permessi per funzionare correttamente.",
       "microphone": {
         "title": "Accesso al Microfono",
         "description": "Necessario per sentire la tua voce per la trascrizione."
@@ -130,7 +129,7 @@
       "deleteActiveConfirm": "{{modelName}} è il tuo modello attivo. Eliminarlo interromperà le trascrizioni fino a quando non selezionerai un nuovo modello. Sei sicuro?",
       "deleteTitle": "Elimina modello",
       "retiredNotice": {
-        "title": "I modelli precedenti non funzionano più con Handy",
+        "title": "I modelli precedenti non funzionano più con Echo",
         "description": "Occupano {{size}} sul tuo computer.",
         "delete": "Elimina modelli",
         "deleted": "Modelli precedenti eliminati",
@@ -147,13 +146,13 @@
       "searchPlaceholder": "Cerca modelli per nome…",
       "rescan": {
         "label": "Riscansiona",
-        "tooltip": "Riscansiona per trovare modelli aggiunti alla cartella dei modelli o alla cache di Hugging Face al di fuori di Handy"
+        "tooltip": "Riscansiona per trovare modelli aggiunti alla cartella dei modelli o alla cache di Hugging Face al di fuori di Echo"
       }
     },
     "general": {
       "title": "Generale",
       "shortcut": {
-        "title": "Scorciatoie di Handy",
+        "title": "Scorciatoie di Echo",
         "description": "Configura le scorciatoie per attivare la trascrizione vocale",
         "loading": "Caricamento delle scorciatoie...",
         "none": "Nessuna scorciatoia configurata",
@@ -261,11 +260,11 @@
       },
       "autostart": {
         "label": "Avvia all'Accensione",
-        "description": "Avvia Handy automaticamente quando accedi al computer."
+        "description": "Avvia Echo automaticamente quando accedi al computer."
       },
       "showTrayIcon": {
         "label": "Mostra icona nella barra di sistema",
-        "description": "Mostra l'icona di Handy nella barra di sistema."
+        "description": "Mostra l'icona di Echo nella barra di sistema."
       },
       "overlay": {
         "style": {
@@ -481,11 +480,6 @@
         "lineCount": "{{count}} righe",
         "empty": "In attesa di log… Le voci appariranno qui man mano che l'app le emette."
       },
-      "updateChecks": {
-        "label": "Controlla aggiornamenti",
-        "description": "Controlla automaticamente la disponibilità di nuove versioni di Handy",
-        "lockedDescription": "Disabilitato dalla configurazione di sistema (HANDY_DISABLE_UPDATER)"
-      },
       "soundTheme": {
         "label": "Tema Sonoro",
         "description": "Scegli un tema sonoro per il feedback di inizio e fine registrazione"
@@ -561,7 +555,7 @@
       },
       "keyboardDiagnostic": {
         "title": "Diagnostica tastiera",
-        "description": "Verifica se gli eventi della tastiera arrivano a Handy. Viene registrato solo il numero di eventi, mai quali tasti premi.",
+        "description": "Verifica se gli eventi della tastiera arrivano a Echo. Viene registrato solo il numero di eventi, mai quali tasti premi.",
         "run": "Esegui diagnostica di 10 s",
         "running": "In ascolto… premi la tua scorciatoia alcune volte (ad es. Option+Space)",
         "secureInputLabel": "Secure Input",
@@ -575,16 +569,9 @@
         "mouse": "Mouse",
         "verdictBlocked": "Secure Input sta bloccando gli eventi dei tasti: le scorciatoie che includono un tasto normale non possono funzionare finché non viene risolto.",
         "verdictSuspicious": "Sono arrivati eventi dei modificatori ma nessun evento dei tasti: qualcosa sta sopprimendo i tasti anche se Secure Input risulta disabilitato. Segnalalo su GitHub.",
-        "verdictOk": "Gli eventi dei tasti arrivano a Handy normalmente.",
+        "verdictOk": "Gli eventi dei tasti arrivano a Echo normalmente.",
         "verdictNoEvents": "Nessun evento rilevato: hai premuto qualche tasto durante il test?",
         "failed": "Diagnostica non riuscita: {{error}}"
-      },
-      "whatsNewPreview": {
-        "title": "Anteprima delle novità",
-        "description": "Apri le note di rilascio incluse più recenti senza segnarle come viste",
-        "button": "Anteprima",
-        "noNotes": "Nessuna nota di rilascio inclusa trovata",
-        "error": "Impossibile mostrare l'anteprima delle note di rilascio"
       },
       "onboardingPreview": {
         "title": "Anteprima della configurazione iniziale",
@@ -596,35 +583,9 @@
     },
     "about": {
       "title": "Informazioni",
-      "version": {
-        "title": "Versione",
-        "description": "Versione attuale di Handy"
-      },
       "appDataDirectory": {
         "title": "Cartella Dati App",
-        "description": "Cartella in cui Handy salva i dati"
-      },
-      "sourceCode": {
-        "title": "Codice Sorgente",
-        "description": "Vedi e contribuisci al codice sorgente",
-        "button": "Vedi su GitHub"
-      },
-      "supportDevelopment": {
-        "title": "Supporta lo Sviluppo",
-        "description": "Aiutaci a sviluppare Handy",
-        "button": "Dona"
-      },
-      "acknowledgments": {
-        "title": "Ringraziamenti",
-        "ggml": {
-          "title": "ggml",
-          "description": "Inferenza ad alte prestazioni del modello di riconoscimento vocale automatico Whisper di OpenAI",
-          "details": "Handy usa ggml per il riconoscimento vocale veloce in locale. Grazie a Georgi Gerganov e collaboratori per il fantastico lavoro."
-        }
-      },
-      "whatsNewUpdates": {
-        "label": "Mostra novità",
-        "description": "Mostra le note di rilascio dopo gli aggiornamenti di Handy"
+        "description": "Cartella in cui Echo salva i dati"
       }
     }
   },
@@ -654,7 +615,7 @@
     "noOptionsFound": "Nessuna opzione trovata"
   },
   "accessibility": {
-    "permissionsDescription": "Handy ha bisogno dei permessi di accessibilità per digitare il testo trascritto.",
+    "permissionsDescription": "Echo ha bisogno dei permessi di accessibilità per digitare il testo trascritto.",
     "openSettings": "Apri Impostazioni di Sistema"
   },
   "errors": {
@@ -677,11 +638,11 @@
   },
   "appLanguage": {
     "title": "Lingua Applicazione",
-    "description": "Cambia la lingua dell'interfaccia di Handy"
+    "description": "Cambia la lingua dell'interfaccia di Echo"
   },
   "theme": {
     "title": "Tema dell'applicazione",
-    "description": "Scegli se Handy segue il tema di sistema o resta chiaro o scuro",
+    "description": "Scegli se Echo segue il tema di sistema o resta chiaro o scuro",
     "options": {
       "system": "Sistema",
       "light": "Chiaro",
@@ -693,9 +654,6 @@
     "processing": "Elaborazione...",
     "loadingModel": "Caricamento del modello..."
   },
-  "whatsNew": {
-    "title": "Novità in Handy v{{version}}"
-  },
   "secureInput": {
     "blockedWithCulprit_one": "{{name}} potrebbe bloccare 1 scorciatoia",
     "blockedWithCulprit_other": "{{name}} potrebbe bloccare {{count}} scorciatoie",
@@ -703,7 +661,6 @@
     "blockedNoCulprit_other": "macOS sta bloccando temporaneamente {{count}} scorciatoie",
     "recorderBlockedWithCulprit": "{{name}} potrebbe bloccare le modifiche alle scorciatoie",
     "recorderBlockedNoCulprit": "macOS sta bloccando temporaneamente le modifiche alle scorciatoie",
-    "learnMore": "Come risolvere",
     "recorderBlocked": "Non è possibile registrare scorciatoie in questo momento: Secure Input di macOS sta bloccando gli eventi dei tasti. Risolvi prima l'avviso di Secure Input.",
     "dismiss": "Ignora"
   }

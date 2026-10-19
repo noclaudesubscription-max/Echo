@@ -1,17 +1,17 @@
-# Handy
+# Echo
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/WVBeWsNXK4)
 
 **A free, open source, and extensible speech-to-text application that works completely offline.**
 
-Handy is a cross-platform desktop application that provides simple, privacy-focused speech transcription. Press a shortcut, speak, and have your words appear in any text field. This happens on your own computer without sending any information to the cloud.
+Echo is a cross-platform desktop application that provides simple, privacy-focused speech transcription. Press a shortcut, speak, and have your words appear in any text field. This happens on your own computer without sending any information to the cloud.
 
-## Why Handy?
+## Why Echo?
 
 Handy was created to fill the gap for a truly open source, extensible speech-to-text tool. As stated on [handy.computer](https://handy.computer):
 
 - **Free**: Accessibility tooling belongs in everyone's hands, not behind a paywall
-- **Open Source**: Together we can build further. Extend Handy for yourself and contribute to something bigger
+- **Open Source**: Together we can build further. Extend Echo for yourself and contribute to something bigger
 - **Private**: Your voice stays on your computer. Get transcriptions without sending audio to the cloud
 - **Simple**: One tool, one job. Transcribe what you say and put it into a text box
 
@@ -19,7 +19,7 @@ Handy was created to fill the gap for a truly open source, extensible speech-to-
 
 1. **Press** a configurable keyboard shortcut: hold it to record and release to stop, or tap it to toggle recording on and off (Hold-only and Toggle-only modes are also available)
 2. **Speak** your words while the shortcut is active
-3. **Release** and Handy processes your speech using Whisper
+3. **Release** and Echo processes your speech using Whisper
 4. **Get** your transcribed text pasted directly into whatever app you're using
 
 The process is entirely local:
@@ -37,14 +37,14 @@ The process is entirely local:
 1. Download the latest release from the [releases page](https://github.com/cjpais/Handy/releases) or the [website](https://handy.computer)
    - **macOS**: Also available via [Homebrew cask](https://formulae.brew.sh/cask/handy): `brew install --cask handy`
    - **Windows**: Also available via [winget](https://github.com/microsoft/winget-pkgs): `winget install cjpais.Handy` \
-     **Note:** The Homebrew cask and winget package are not maintained by the Handy developers.
+     **Note:** The Homebrew cask and winget package are not maintained by the Echo developers.
    - **Debian/Ubuntu**: Install the downloaded `.deb` with APT so required dependencies are installed automatically:
      ```bash
      sudo apt install ./Handy_*.deb
      ```
      Do not use `dpkg -i` unless the dependencies are already installed. If you already used it, run `sudo apt --fix-broken install`.
 2. Install the application
-3. Launch Handy and grant necessary system permissions (microphone, accessibility)
+3. Launch Echo and grant necessary system permissions (microphone, accessibility)
 4. Configure your preferred keyboard shortcuts in Settings
 5. Start transcribing!
 
@@ -55,7 +55,7 @@ For detailed build instructions including platform-specific requirements, see [B
 ## Sponsors
 
 <div align="center">
-  We're grateful for the support of our sponsors who help make Handy possible:
+  We're grateful for the support of our sponsors who help make Echo possible:
   <br><br>
   <a href="https://wordcab.com">
     <img src="sponsor-images/wordcab.png" alt="Wordcab" width="120" height="120">
@@ -84,14 +84,14 @@ Control Handy from [Raycast](https://www.raycast.com) — start/stop recording, 
 
 ### Debug Mode
 
-Handy includes an advanced debug mode for development and troubleshooting. Access it by pressing:
+Echo includes an advanced debug mode for development and troubleshooting. Access it by pressing:
 
 - **macOS**: `Cmd+Shift+D`
 - **Windows/Linux**: `Ctrl+Shift+D`
 
 ### CLI Parameters
 
-Handy supports command-line flags for controlling a running instance and customizing startup behavior. These work on all platforms (macOS, Windows, Linux). Largely this is a beta feature.
+Echo supports command-line flags for controlling a running instance and customizing startup behavior. These work on all platforms (macOS, Windows, Linux). Largely this is a beta feature.
 
 **Remote control flags** (sent to an already-running instance via the single-instance plugin):
 
@@ -116,7 +116,7 @@ Flags can be combined for autostart scenarios:
 handy --start-hidden --no-tray
 ```
 
-> **macOS tip:** When Handy is installed as an app bundle, invoke the binary directly:
+> **macOS tip:** When Echo is installed as an app bundle, invoke the binary directly:
 >
 > ```bash
 > /Applications/Handy.app/Contents/MacOS/Handy --toggle-transcription
@@ -128,13 +128,13 @@ This project is actively being developed and has some [known issues](https://git
 
 ### Bluetooth Headset Microphones (macOS)
 
-Using a Bluetooth headset microphone on macOS may temporarily reduce playback quality or volume while recording because Bluetooth switches to bidirectional audio. Keep your headphones as the output device and select your Mac's built-in or an external microphone in Handy to avoid this.
+Using a Bluetooth headset microphone on macOS may temporarily reduce playback quality or volume while recording because Bluetooth switches to bidirectional audio. Keep your headphones as the output device and select your Mac's built-in or an external microphone in Echo to avoid this.
 
 ### fn and Globe Key Shortcuts (macOS)
 
 Shortcuts that include the `fn` (Globe) key **only work on Apple keyboards** — your Mac's built-in keyboard or an Apple external keyboard. They will never trigger on a third-party keyboard, even while it is connected to the same Mac.
 
-This is a hardware limitation rather than a Handy bug. `fn` is not part of the standard USB HID keyboard specification: Apple reports it through a vendor-specific usage that macOS honors only from Apple devices, while third-party keyboards handle their `Fn` key entirely in firmware and send nothing to the computer. There is no event for Handy to listen for.
+This is a hardware limitation rather than a Echo bug. `fn` is not part of the standard USB HID keyboard specification: Apple reports it through a vendor-specific usage that macOS honors only from Apple devices, while third-party keyboards handle their `Fn` key entirely in firmware and send nothing to the computer. There is no event for Echo to listen for.
 
 If you switch between a MacBook keyboard and an external one, pick a shortcut built from standard modifiers (`ctrl`, `option`, `shift`, `command`) or a regular key instead.
 
@@ -155,7 +155,7 @@ For reliable text input on Linux, install the appropriate tool for your display 
 - **Wayland**: Install `wtype` (preferred) or `dotool` for text input to work correctly
 - **dotool setup**: Requires adding your user to the `input` group: `sudo usermod -aG input $USER` (then log out and back in)
 
-Without these tools, Handy falls back to enigo which may have limited compatibility, especially on Wayland.
+Without these tools, Echo falls back to enigo which may have limited compatibility, especially on Wayland.
 
 **Wayland Support (Linux):**
 
@@ -165,7 +165,7 @@ Without these tools, Handy falls back to enigo which may have limited compatibil
 **Other Notes:**
 
 - **Runtime library dependency (`libgtk-layer-shell.so.0`)**:
-  - Handy links `gtk-layer-shell` on Linux. If startup fails with `error while loading shared libraries: libgtk-layer-shell.so.0`, install the runtime package for your distro:
+  - Echo links `gtk-layer-shell` on Linux. If startup fails with `error while loading shared libraries: libgtk-layer-shell.so.0`, install the runtime package for your distro:
 
     | Distro        | Package to install    | Example command                        |
     | ------------- | --------------------- | -------------------------------------- |
@@ -175,22 +175,22 @@ Without these tools, Handy falls back to enigo which may have limited compatibil
 
   - For building from source on Ubuntu/Debian, you may also need `libgtk-layer-shell-dev`.
 
-- The recording overlay is disabled by default on Linux (`Overlay Position: None`) because certain compositors treat it as the active window. When the overlay is visible it can steal focus, which prevents Handy from pasting back into the application that triggered transcription. If you enable the overlay anyway, be aware that clipboard-based pasting might fail or end up in the wrong window.
-- Handy disables the WebKit DMA-BUF renderer by default on Linux, but preserves explicit `WEBKIT_DISABLE_DMABUF_RENDERER` values. For rendering workarounds, see [Troubleshooting → Linux Startup Crashes or Instability](#linux-startup-crashes-or-instability).
-- If Handy fails to start reliably on Linux, see [Troubleshooting → Linux Startup Crashes or Instability](#linux-startup-crashes-or-instability).
+- The recording overlay is disabled by default on Linux (`Overlay Position: None`) because certain compositors treat it as the active window. When the overlay is visible it can steal focus, which prevents Echo from pasting back into the application that triggered transcription. If you enable the overlay anyway, be aware that clipboard-based pasting might fail or end up in the wrong window.
+- Echo disables the WebKit DMA-BUF renderer by default on Linux, but preserves explicit `WEBKIT_DISABLE_DMABUF_RENDERER` values. For rendering workarounds, see [Troubleshooting → Linux Startup Crashes or Instability](#linux-startup-crashes-or-instability).
+- If Echo fails to start reliably on Linux, see [Troubleshooting → Linux Startup Crashes or Instability](#linux-startup-crashes-or-instability).
 - **Global keyboard shortcuts (Wayland):** On Wayland, system-level shortcuts must be configured through your desktop environment or window manager. Use the [CLI flags](#cli-parameters) as the command for your custom shortcut.
 
   **GNOME:**
   1. Open **Settings > Keyboard > Keyboard Shortcuts > Custom Shortcuts**
   2. Click the **+** button to add a new shortcut
-  3. Set the **Name** to `Toggle Handy Transcription`
+  3. Set the **Name** to `Toggle Echo Transcription`
   4. Set the **Command** to `handy --toggle-transcription`
   5. Click **Set Shortcut** and press your desired key combination (e.g., `Super+O`)
 
   **KDE Plasma:**
   1. Open **System Settings > Shortcuts > Custom Shortcuts**
   2. Click **Edit > New > Global Shortcut > Command/URL**
-  3. Name it `Toggle Handy Transcription`
+  3. Name it `Toggle Echo Transcription`
   4. In the **Trigger** tab, set your desired key combination
   5. In the **Action** tab, set the command to `handy --toggle-transcription`
 
@@ -210,7 +210,7 @@ Without these tools, Handy falls back to enigo which may have limited compatibil
   bind = $mainMod, O, exec, handy --toggle-transcription
   ```
 
-- You can also trigger Handy externally via Unix signals or the CLI flags, which lets Wayland window managers or other hotkey daemons keep ownership of keybindings:
+- You can also trigger Echo externally via Unix signals or the CLI flags, which lets Wayland window managers or other hotkey daemons keep ownership of keybindings:
 
   | Action                                    | Trigger                                                  |
   | ----------------------------------------- | -------------------------------------------------------- |
@@ -237,7 +237,7 @@ Without these tools, Handy falls back to enigo which may have limited compatibil
 
 ## Verify Release Signatures
 
-Handy release artifacts are signed with Tauri's updater signature format. The public key is stored in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json) under `plugins.updater.pubkey`.
+Echo release artifacts are signed with Tauri's updater signature format. The public key is stored in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json) under `plugins.updater.pubkey`.
 
 To verify a release manually, set `ARTIFACT` to the filename you downloaded, save the `pubkey` value from `src-tauri/tauri.conf.json` to `handy.pub.b64`, then decode the public key and matching `.sig` file from base64 and verify the artifact with `minisign`:
 
@@ -276,19 +276,19 @@ Do not use `gpg` for these `.sig` files.
 
 If the transcription is correct in **History** but Handy inserts text you copied earlier, see [issue #502](https://github.com/cjpais/Handy/issues/502). With the standard clipboard paste method, Handy restores your previous clipboard after a fixed delay. Under load, the receiving application may read the clipboard only after that restoration.
 
-1. Open Handy's settings window and press `Cmd+Shift+D` (macOS) or `Ctrl+Shift+D` (Windows/Linux) to reveal **Debug**.
+1. Open Echo's settings window and press `Cmd+Shift+D` (macOS) or `Ctrl+Shift+D` (Windows/Linux) to reveal **Debug**.
 2. On **macOS and Windows**, try **Reliable Paste (Beta)** in Debug with a clipboard paste method selected. It uses clipboard read notifications to delay restoration instead of relying on the standard fixed delay. Test it in the application where the problem occurs; it is still experimental.
 3. If Reliable Paste is disabled or unavailable, increase **Paste Delay (After)** in Debug and test again. This controls the wait before restoring your previous clipboard. **Paste Delay (Before)** controls the wait before sending the paste keystroke and addresses a different part of the operation. These delay settings apply to the standard paste path, not Reliable Paste.
 
-If the problem persists, add your Handy version, operating system, receiving application, paste method, Reliable Paste setting, and before/after delays to the existing issue. Redact private dictated text before sharing logs.
+If the problem persists, add your Echo version, operating system, receiving application, paste method, Reliable Paste setting, and before/after delays to the existing issue. Redact private dictated text before sharing logs.
 
 ### Manual Model Installation (For Proxy Users or Network Restrictions)
 
-If you're behind a proxy, firewall, or in a restricted network environment where Handy cannot download models automatically, you can manually download and install them. The URLs are publicly accessible from any browser.
+If you're behind a proxy, firewall, or in a restricted network environment where Echo cannot download models automatically, you can manually download and install them. The URLs are publicly accessible from any browser.
 
 #### Step 1: Find Your App Data Directory
 
-1. Open Handy settings
+1. Open Echo settings
 2. Navigate to the **About** section
 3. Copy the "App Data Directory" path shown there, or use the shortcuts:
    - **macOS**: `Cmd+Shift+D` to open debug menu
@@ -343,29 +343,29 @@ Simply place the `.bin` file directly into the `models` directory:
 
 **For GGUF Models (.gguf files):**
 
-Place the `.gguf` file directly into the `models` directory, exactly like the Whisper `.bin` files above. Handy also picks up models already present in the shared Hugging Face cache (`~/.cache/huggingface/hub`), so a copy downloaded by another tool works without being moved.
+Place the `.gguf` file directly into the `models` directory, exactly like the Whisper `.bin` files above. Echo also picks up models already present in the shared Hugging Face cache (`~/.cache/huggingface/hub`), so a copy downloaded by another tool works without being moved.
 
 **Important Notes:**
 
 - Do not rename the `.bin` or `.gguf` files—use the exact filenames from the download URLs
-- After placing the files, restart Handy to detect the new models
+- After placing the files, restart Echo to detect the new models
 
 #### Step 5: Verify Installation
 
-1. Restart Handy
+1. Restart Echo
 2. Open Settings → Models
 3. Your manually installed models should now appear as "Downloaded"
 4. Select the model you want to use and test transcription
 
 ### Custom Whisper Models
 
-Handy can auto-discover custom Whisper GGML models placed in the `models` directory. This is useful for users who want to use fine-tuned or community models not included in the default model list.
+Echo can auto-discover custom Whisper GGML models placed in the `models` directory. This is useful for users who want to use fine-tuned or community models not included in the default model list.
 
 **How to use:**
 
 1. Obtain a Whisper model in GGML `.bin` format (e.g., from [Hugging Face](https://huggingface.co/models?search=whisper%20ggml))
 2. Place the `.bin` file in your `models` directory (see paths above)
-3. Restart Handy to discover the new model
+3. Restart Echo to discover the new model
 4. The model will appear in the "Custom Models" section of the Models settings page
 
 **Important:**
@@ -376,11 +376,11 @@ Handy can auto-discover custom Whisper GGML models placed in the `models` direct
 
 ### Linux Startup Crashes or Instability
 
-If Handy fails to start reliably on Linux — for example, it crashes shortly after launch, never shows its window, or reports a Wayland protocol error — try the steps below in order.
+If Echo fails to start reliably on Linux — for example, it crashes shortly after launch, never shows its window, or reports a Wayland protocol error — try the steps below in order.
 
 **1. Install (or reinstall) `gtk-layer-shell`**
 
-Handy uses `gtk-layer-shell` for its recording overlay and links against it at runtime. A missing or broken installation is the most common cause of startup failures and can manifest as a crash or a hang well before any window is shown. Make sure the runtime package is installed for your distro:
+Echo uses `gtk-layer-shell` for its recording overlay and links against it at runtime. A missing or broken installation is the most common cause of startup failures and can manifest as a crash or a hang well before any window is shown. Make sure the runtime package is installed for your distro:
 
 | Distro        | Package to install    | Example command                        |
 | ------------- | --------------------- | -------------------------------------- |
@@ -400,7 +400,7 @@ HANDY_NO_GTK_LAYER_SHELL=1 handy
 
 **3. Configure WebKit DMA-BUF rendering (`WEBKIT_DISABLE_DMABUF_RENDERER`)**
 
-Handy disables the WebKitGTK DMA-BUF renderer by default on Linux because it can cause blank windows or crashes on some GPU/driver combinations. Explicit environment-variable values are preserved, including in the Nix package. To explicitly keep the renderer disabled:
+Echo disables the WebKitGTK DMA-BUF renderer by default on Linux because it can cause blank windows or crashes on some GPU/driver combinations. Explicit environment-variable values are preserved, including in the Nix package. To explicitly keep the renderer disabled:
 
 ```bash
 WEBKIT_DISABLE_DMABUF_RENDERER=1 handy
@@ -414,44 +414,44 @@ WEBKIT_DISABLE_DMABUF_RENDERER=0 handy
 
 This allows WebKit to use the renderer when supported, but can reintroduce the GPU/driver-specific crashes described above. Remove the override or use `=1` if that happens.
 
-Fully quit Handy, including its tray instance, before testing either value. Running a second instance with `--toggle-transcription` does not change the running process's environment.
+Fully quit Echo, including its tray instance, before testing either value. Running a second instance with `--toggle-transcription` does not change the running process's environment.
 
 **Making a workaround permanent**
 
-Set the variable in the environment of the launcher that actually starts Handy. Shell profile exports may not apply to desktop-menu or autostart launches. If you launch Handy from a `.desktop` file, you can prefix the `Exec=` line, e.g.:
+Set the variable in the environment of the launcher that actually starts Echo. Shell profile exports may not apply to desktop-menu or autostart launches. If you launch Echo from a `.desktop` file, you can prefix the `Exec=` line, e.g.:
 
 ```ini
 Exec=env HANDY_NO_GTK_LAYER_SHELL=1 handy
 ```
 
-Handy's built-in autostart rewrites its generated desktop entry, so editing that entry is not a durable workaround. For autostart, use an appropriate session/service environment, or disable Handy's built-in autostart and manage your own startup entry with the required variable.
+Echo's built-in autostart rewrites its generated desktop entry, so editing that entry is not a durable workaround. For autostart, use an appropriate session/service environment, or disable Echo's built-in autostart and manage your own startup entry with the required variable.
 
 If a workaround helps you, please [open an issue](https://github.com/cjpais/Handy/issues) describing your distro, desktop environment, and session type — that information helps us narrow down the underlying bug.
 
 ### Empty recording overlay on Hyprland / Omarchy
 
-If the recording overlay is empty or bordered, fully quit Handy and launch a
+If the recording overlay is empty or bordered, fully quit Echo and launch a
 [native installation](BUILD.md#linux-install-from-source) with Wayland enabled:
 
 ```bash
 env -u HANDY_NO_GTK_LAYER_SHELL GDK_BACKEND=wayland handy
 ```
 
-If this works, apply `GDK_BACKEND=wayland` only to Handy's launcher. This
+If this works, apply `GDK_BACKEND=wayland` only to Echo's launcher. This
 workaround does not work with the 0.9.6 AppImage, which forces X11.
 
 ### Vulkan Overlays and Capture Tools on Windows (`HANDY_KEEP_VULKAN_IMPLICIT_LAYERS`)
 
 On Windows, Handy asks the Vulkan loader to skip implicit layers to avoid crashes caused by overlay and capture hooks ([#2049](https://github.com/cjpais/Handy/issues/2049)). GPU acceleration remains enabled; this does not change system-wide settings.
 
-To opt out for GPU selection or debugging tools, fully quit Handy (including the tray icon), then run both commands in the same PowerShell window:
+To opt out for GPU selection or debugging tools, fully quit Echo (including the tray icon), then run both commands in the same PowerShell window:
 
 ```powershell
 $env:HANDY_KEEP_VULKAN_IMPLICIT_LAYERS = "1"
 & "$env:ProgramFiles\Handy\handy.exe"
 ```
 
-Adjust the executable path if needed. This override only applies to apps launched from that PowerShell session, not the Start menu. Handy also preserves any existing `VK_LOADER_LAYERS_DISABLE` value.
+Adjust the executable path if needed. This override only applies to apps launched from that PowerShell session, not the Start menu. Echo also preserves any existing `VK_LOADER_LAYERS_DISABLE` value.
 
 ### How to Contribute
 
@@ -472,7 +472,7 @@ The goal is to create both a useful tool and a foundation for others to build up
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-Handy is open-source software, but the Handy name, logo, icon, and brand assets are not open-source. Unofficial forks, rewrites, and redistributions must use their own branding and must not imply endorsement or affiliation.
+Echo is open-source software, but the Echo name, logo, icon, and brand assets are not open-source. Unofficial forks, rewrites, and redistributions must use their own branding and must not imply endorsement or affiliation.
 
 ## Acknowledgments
 
@@ -480,4 +480,4 @@ Handy is open-source software, but the Handy name, logo, icon, and brand assets 
 - **ggml** for an amazing cross-platform tensor library
 - **Silero** for great lightweight VAD
 - **Tauri** team for the excellent Rust-based app framework
-- **Community contributors** helping make Handy better
+- **Community contributors** helping make Echo better

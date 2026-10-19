@@ -1,7 +1,6 @@
 {
   "tray": {
     "settings": "Indstillinger...",
-    "checkUpdates": "Tjek for opdateringer...",
     "copyLastTranscript": "Kopiér seneste transskription",
     "unloadModel": "Frigør model",
     "model": "Model",
@@ -28,7 +27,7 @@
     "customModelDescription": "Ikke officielt understøttet",
     "migration": {
       "title": "Dine modeller skal opdateres",
-      "description": "Handy bruger nu en nyere type model. Download den nye version for at fortsætte med at transskribere. Gamle versioner vil blive fjernet.",
+      "description": "Echo bruger nu en nyere type model. Download den nye version for at fortsætte med at transskribere. Gamle versioner vil blive fjernet.",
       "replaces": "Erstatter {{name}}",
       "oldFormat": "Gammelt format",
       "failed": "Download mislykkedes",
@@ -69,7 +68,7 @@
     },
     "permissions": {
       "title": "Tilladelser påkrævet",
-      "description": "Handy har brug for et par tilladelser for at fungere korrekt.",
+      "description": "Echo har brug for et par tilladelser for at fungere korrekt.",
       "microphone": {
         "title": "Mikrofonadgang",
         "description": "Påkrævet for at høre din stemme til transskription."
@@ -126,7 +125,7 @@
     "general": {
       "title": "Generelt",
       "shortcut": {
-        "title": "Handy-genveje",
+        "title": "Echo-genveje",
         "description": "Konfigurer tastaturgenveje til at udløse tale-til-tekst-optagelse",
         "loading": "Indlæser genveje...",
         "none": "Ingen genveje konfigureret",
@@ -184,7 +183,7 @@
       "deleteActiveConfirm": "{{modelName}} er din aktive model. Sletning af den vil stoppe transskriptioner, indtil du vælger en ny model. Er du sikker?",
       "deleteTitle": "Slet model",
       "retiredNotice": {
-        "title": "Gamle modeller virker ikke længere med Handy",
+        "title": "Gamle modeller virker ikke længere med Echo",
         "description": "De fylder {{size}} på din computer.",
         "delete": "Slet modeller",
         "deleted": "Gamle modeller er slettet",
@@ -197,7 +196,7 @@
       },
       "rescan": {
         "label": "Søg igen",
-        "tooltip": "Søg igen efter modeller, der er tilføjet til modelmappen eller Hugging Face-cachen uden for Handy"
+        "tooltip": "Søg igen efter modeller, der er tilføjet til modelmappen eller Hugging Face-cachen uden for Echo"
       },
       "noModelsMatch": "Ingen modeller matcher dette filter."
     },
@@ -261,11 +260,11 @@
       },
       "autostart": {
         "label": "Start ved opstart",
-        "description": "Start Handy automatisk, når du logger ind på din computer."
+        "description": "Start Echo automatisk, når du logger ind på din computer."
       },
       "showTrayIcon": {
         "label": "Vis proceslinjeikon",
-        "description": "Vis Handy-ikonet i meddelelsesområdet."
+        "description": "Vis Echo-ikonet i meddelelsesområdet."
       },
       "overlay": {
         "style": {
@@ -481,18 +480,6 @@
         "lineCount": "{{count}} linjer",
         "empty": "Venter på logs… Poster vises her, når appen udsender dem."
       },
-      "updateChecks": {
-        "label": "Tjek for opdateringer",
-        "description": "Tjek automatisk for nye versioner af Handy",
-        "lockedDescription": "Deaktiveret af systemkonfiguration (HANDY_DISABLE_UPDATER)"
-      },
-      "whatsNewPreview": {
-        "title": "Forhåndsvisning af nyheder",
-        "description": "Åbn de seneste medfølgende udgivelsesnoter uden at markere dem som set",
-        "button": "Forhåndsvisning",
-        "noNotes": "Ingen medfølgende udgivelsesnoter fundet",
-        "error": "Kunne ikke forhåndsvise udgivelsesnoter"
-      },
       "onboardingPreview": {
         "title": "Forhåndsvis introduktion",
         "description": "Forhåndsvis introduktionsskærmene uden at ændre tilladelser, modeller eller fuldførelsesstatus",
@@ -575,7 +562,7 @@
       },
       "keyboardDiagnostic": {
         "title": "Tastaturdiagnostik",
-        "description": "Kontrollerer, om tastaturhændelser når frem til Handy. Kun antallet af hændelser registreres — aldrig hvilke taster du trykker på.",
+        "description": "Kontrollerer, om tastaturhændelser når frem til Echo. Kun antallet af hændelser registreres — aldrig hvilke taster du trykker på.",
         "run": "Kør 10 s diagnostik",
         "running": "Lytter… tryk på din genvej et par gange (f.eks. Option+Space)",
         "secureInputLabel": "Secure Input",
@@ -589,42 +576,16 @@
         "mouse": "Mus",
         "verdictBlocked": "Secure Input blokerer tastehændelser — genveje med en almindelig tast kan ikke fungere, før det er løst.",
         "verdictSuspicious": "Der kom modifikatorhændelser, men ingen tastehændelser — noget undertrykker taster, selvom Secure Input rapporteres som deaktiveret. Rapportér det gerne på GitHub.",
-        "verdictOk": "Tastehændelser når frem til Handy som normalt.",
+        "verdictOk": "Tastehændelser når frem til Echo som normalt.",
         "verdictNoEvents": "Ingen hændelser registreret — trykkede du på nogen taster under testen?",
         "failed": "Diagnostik mislykkedes: {{error}}"
       }
     },
     "about": {
       "title": "Om",
-      "version": {
-        "title": "Version",
-        "description": "Nuværende version af Handy"
-      },
-      "whatsNewUpdates": {
-        "label": "Vis nyheder",
-        "description": "Vis udgivelsesnoter, efter Handy opdateres"
-      },
       "appDataDirectory": {
         "title": "Appdatamappe",
-        "description": "Placering, hvor Handy gemmer sine data"
-      },
-      "sourceCode": {
-        "title": "Kildekode",
-        "description": "Se kildekode og bidrag",
-        "button": "Vis på GitHub"
-      },
-      "supportDevelopment": {
-        "title": "Støt udviklingen",
-        "description": "Hjælp os med at fortsætte udviklingen af Handy",
-        "button": "Donér"
-      },
-      "acknowledgments": {
-        "title": "Anerkendelser",
-        "ggml": {
-          "title": "ggml",
-          "description": "Højtydende tensor-bibliotek til maskinlæringsinferens på enheden",
-          "details": "Handys lokale tale-til-tekst funktionalitet er bygget på transcribe.cpp og ggml. Tak for det fantastiske arbejde af Georgi Gerganov og bidragyderne."
-        }
+        "description": "Placering, hvor Echo gemmer sine data"
       }
     }
   },
@@ -643,9 +604,6 @@
     "portableUpdateBrowseMessage": "Flytbare installationer kan ikke opdateres automatisk. Download den nyeste version til dit system fra GitHub Releases, og installer den i den samme mappe — din Data/-mappe (indstillinger, modeller, optagelser) bliver bevaret.",
     "portableUpdateBrowseButton": "Åbn GitHub Releases"
   },
-  "whatsNew": {
-    "title": "Nyt i Handy v{{version}}"
-  },
   "common": {
     "loading": "Indlæser...",
     "delete": "Slet",
@@ -657,7 +615,7 @@
     "noOptionsFound": "Ingen muligheder fundet"
   },
   "accessibility": {
-    "permissionsDescription": "Handy har brug for tilgængelighedstilladelser for at skrive den transskriberede tekst.",
+    "permissionsDescription": "Echo har brug for tilgængelighedstilladelser for at skrive den transskriberede tekst.",
     "openSettings": "Åbn systemindstillinger"
   },
   "errors": {
@@ -680,11 +638,11 @@
   },
   "appLanguage": {
     "title": "Applikationssprog",
-    "description": "Skift sproget for Handy-grænsefladen"
+    "description": "Skift sproget for Echo-grænsefladen"
   },
   "theme": {
     "title": "Applikationstema",
-    "description": "Vælg om Handy skal følge dit systemtema eller forblive lyst eller mørkt",
+    "description": "Vælg om Echo skal følge dit systemtema eller forblive lyst eller mørkt",
     "options": {
       "system": "System",
       "light": "Lys",
@@ -703,7 +661,6 @@
     "blockedNoCulprit_other": "macOS blokerer midlertidigt {{count}} genveje",
     "recorderBlockedWithCulprit": "{{name}} blokerer muligvis ændringer af genveje",
     "recorderBlockedNoCulprit": "macOS blokerer midlertidigt ændringer af genveje",
-    "learnMore": "Sådan løser du det",
     "recorderBlocked": "Genveje kan ikke optages lige nu — macOS Secure Input blokerer tastehændelser. Løs advarslen om Secure Input først.",
     "dismiss": "Afvis"
   }

@@ -1,7 +1,7 @@
 [package]
 name = "handy"
 version = "0.9.8"
-description = "Handy"
+description = "Echo"
 authors = ["cjpais"]
 edition = "2021"
 license = "MIT"
@@ -92,7 +92,6 @@ signal-hook = "0.3"
 tauri-plugin-autostart = "2.5.1"
 tauri-plugin-global-shortcut = "2.3.1"
 tauri-plugin-single-instance = "2.3.2"
-tauri-plugin-updater = "2.10.1"
 
 [target.'cfg(windows)'.dependencies]
 # Used to reach ICoreWebView2Settings3 through the webview's controller
@@ -128,9 +127,11 @@ winreg = "0.55"
 # signtool verify entirely. CI pins -DGGML_NATIVE=OFF (see build.yml) so the
 # static build targets a portable ARM baseline, not the build runner's CPU.
 [target.'cfg(all(windows, target_arch = "x86_64"))'.dependencies]
+# NOTE (REA rebuild): Vulkan GPU backend disabled here because this build
+# environment has no admin rights to run the Vulkan SDK's elevated installer.
+# CPU-only dynamic-backends still gets per-ISA runtime dispatch; just no GPU.
 transcribe-cpp = { version = "0.4.0", default-features = false, features = [
   "dynamic-backends",
-  "vulkan",
 ] }
 
 [target.'cfg(all(windows, target_arch = "aarch64"))'.dependencies]

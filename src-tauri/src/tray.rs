@@ -62,7 +62,6 @@ struct MenuInputs {
     /// `(id, name)` of downloaded models, sorted by name.
     downloaded_models: Vec<(String, String)>,
     locale: String,
-    update_checks_enabled: bool,
 }
 
 /// Complete description of what the tray should look like.
@@ -195,7 +194,7 @@ pub fn get_icon_path(theme: AppTheme, state: TrayIconState, warning: bool) -> &'
             AppTheme::Light => "resources/tray_idle_warning_dark.png",
             // Linux never sets the warning flag (Secure Input is macOS-only),
             // but fall back to the normal icon just in case.
-            AppTheme::Colored => "resources/handy.png",
+            AppTheme::Colored => "resources/echo.png",
         };
     }
     match (theme, state) {
@@ -208,7 +207,7 @@ pub fn get_icon_path(theme: AppTheme, state: TrayIconState, warning: bool) -> &'
         (AppTheme::Light, TrayIconState::Recording) => "resources/tray_recording_dark.png",
         (AppTheme::Light, TrayIconState::Transcribing) => "resources/tray_transcribing_dark.png",
         // Colored theme uses pink icons (for Linux)
-        (AppTheme::Colored, TrayIconState::Idle) => "resources/handy.png",
+        (AppTheme::Colored, TrayIconState::Idle) => "resources/echo.png",
         (AppTheme::Colored, TrayIconState::Recording) => "resources/recording.png",
         (AppTheme::Colored, TrayIconState::Transcribing) => "resources/transcribing.png",
     }
@@ -333,7 +332,6 @@ fn compute_desired(app: &AppHandle, icon_state: TrayIconState) -> TrayDesired {
             selected_model: settings.selected_model,
             downloaded_models,
             locale: settings.app_language,
-            update_checks_enabled: settings.update_checks_enabled,
         },
     }
 }
@@ -445,9 +443,9 @@ pub fn tray_tooltip() -> String {
 
 fn version_label() -> String {
     if cfg!(debug_assertions) {
-        format!("Handy v{} (Dev)", env!("CARGO_PKG_VERSION"))
+        format!("Echo v{} (Dev)", env!("CARGO_PKG_VERSION"))
     } else {
-        format!("Handy v{}", env!("CARGO_PKG_VERSION"))
+        format!("Echo v{}", env!("CARGO_PKG_VERSION"))
     }
 }
 
@@ -495,13 +493,6 @@ fn build_menu(app: &AppHandle, inputs: &MenuInputs) -> tauri::Result<(Menu<tauri
         true,
         settings_accelerator,
     )?;
-    let check_updates_i = MenuItem::with_id(
-        app,
-        "check_updates",
-        &strings.check_updates,
-        inputs.update_checks_enabled,
-        None::<&str>,
-    )?;
     let copy_last_transcript_i = MenuItem::with_id(
         app,
         "copy_last_transcript",
@@ -524,7 +515,6 @@ fn build_menu(app: &AppHandle, inputs: &MenuInputs) -> tauri::Result<(Menu<tauri
                 &copy_last_transcript_i,
                 &separator()?,
                 &settings_i,
-                &check_updates_i,
                 &separator()?,
                 &quit_i,
             ],
@@ -565,22 +555,11 @@ fn build_menu(app: &AppHandle, inputs: &MenuInputs) -> tauri::Result<(Menu<tauri
                 &unload_model_i,
                 &separator()?,
                 &settings_i,
-                &check_updates_i,
                 &separator()?,
                 &quit_i,
             ],
         )?
     };
-
-    // When update checks are forced off (e.g. HANDY_DISABLE_UPDATER, set by
-    // the Nix package), the item is dropped from the menu rather than shown
-    // disabled — it can never do anything in that case, and a disabled item
-    // still shifts every entry below it by one position. A manually-disabled
-    // toggle in Debug Settings keeps the old greyed-out behavior via the
-    // enabled flag.
-    if settings::update_checks_forced_disabled() {
-        menu.remove(&check_updates_i)?;
-    }
 
     // Both layouts start with [version, separator, ...]; slot the warning in
     // right below the version line so it's the first actionable thing seen.
@@ -613,7 +592,7 @@ pub fn set_tray_visibility(app: &AppHandle, visible: bool) {
 /// Recovery for the macOS tray-disappearance bug (#1948, tauri-apps/tauri#12060):
 /// the `NSStatusItem` can silently vanish with no error surfaced to the app.
 /// Hiding and re-showing the tray recreates it with its current icon, menu and
-/// tooltip. Called when the user "relaunches" Handy while it is already running
+/// tooltip. Called when the user "relaunches" Echo while it is already running
 /// (`RunEvent::Reopen` for Spotlight/Finder/Dock, the single-instance callback
 /// for a second process) — the natural "where did my icon go?" moment — so a
 /// relaunch brings the icon back without a full quit.
@@ -693,7 +672,6 @@ mod tests {
             selected_model: "small".to_string(),
             downloaded_models: vec![("small".to_string(), "Small".to_string())],
             locale: "en".to_string(),
-            update_checks_enabled: true,
         }
     }
 

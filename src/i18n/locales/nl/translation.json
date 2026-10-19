@@ -1,7 +1,6 @@
 {
   "tray": {
     "settings": "Instellingen...",
-    "checkUpdates": "Controleren op updates...",
     "copyLastTranscript": "Laatste transcriptie kopiëren",
     "unloadModel": "Model ontladen",
     "model": "Model",
@@ -16,7 +15,7 @@
     "postProcessing": "Naverwerking",
     "history": "Geschiedenis",
     "debug": "Probleemoplossing",
-    "about": "Over Handy"
+    "about": "Over Echo"
   },
   "onboarding": {
     "subtitle": "Kies een transcriptiemodel om aan de slag te gaan",
@@ -28,7 +27,7 @@
     "customModelDescription": "Niet officieel ondersteund",
     "migration": {
       "title": "Je modellen moeten worden bijgewerkt",
-      "description": "Handy gebruikt nu een nieuwer soort model. Download de nieuwe versie om te blijven transcriberen. Oude versies worden verwijderd.",
+      "description": "Echo gebruikt nu een nieuwer soort model. Download de nieuwe versie om te blijven transcriberen. Oude versies worden verwijderd.",
       "replaces": "Vervangt {{name}}",
       "oldFormat": "Oud formaat",
       "failed": "Downloaden mislukt",
@@ -69,7 +68,7 @@
     },
     "permissions": {
       "title": "Machtigingen vereist",
-      "description": "Handy heeft een aantal machtigingen nodig om goed te kunnen werken.",
+      "description": "Echo heeft een aantal machtigingen nodig om goed te kunnen werken.",
       "microphone": {
         "title": "Microfoontoegang",
         "description": "Vereist om je stem op te nemen voor transcriptie."
@@ -184,7 +183,7 @@
       "deleteActiveConfirm": "{{modelName}} is je actieve model. Als je dit verwijdert, stoppen de transcripties totdat je een nieuw model selecteert. Weet je het zeker?",
       "deleteTitle": "Model verwijderen",
       "retiredNotice": {
-        "title": "Oude modellen werken niet meer met Handy",
+        "title": "Oude modellen werken niet meer met Echo",
         "description": "Ze nemen {{size}} in beslag op je computer.",
         "delete": "Modellen verwijderen",
         "deleted": "Oude modellen verwijderd",
@@ -197,7 +196,7 @@
       },
       "rescan": {
         "label": "Opnieuw scannen",
-        "tooltip": "Scannen naar modellen die buiten Handy om zijn toegevoegd aan de modellenmap of Hugging Face-cache"
+        "tooltip": "Scannen naar modellen die buiten Echo om zijn toegevoegd aan de modellenmap of Hugging Face-cache"
       },
       "noModelsMatch": "Geen modellen voldoen aan dit filter."
     },
@@ -261,11 +260,11 @@
       },
       "autostart": {
         "label": "Starten bij opstarten",
-        "description": "Handy automatisch starten zodra je inlogt op je computer."
+        "description": "Echo automatisch starten zodra je inlogt op je computer."
       },
       "showTrayIcon": {
         "label": "Pictogram in systeemvak tonen",
-        "description": "Toon het Handy-pictogram in het systeemvak."
+        "description": "Toon het Echo-pictogram in het systeemvak."
       },
       "overlay": {
         "style": {
@@ -481,18 +480,6 @@
         "lineCount": "{{count}} regels",
         "empty": "Wachten op logboeken... Meldingen verschijnen hier zodra de app ze genereert."
       },
-      "updateChecks": {
-        "label": "Controleren op updates",
-        "description": "Automatisch controleren op nieuwe versies van Handy",
-        "lockedDescription": "Uitgeschakeld door systeemconfiguratie (HANDY_DISABLE_UPDATER)"
-      },
-      "whatsNewPreview": {
-        "title": "Voorbeeld van release-notes",
-        "description": "Open de nieuwste meegeleverde release-notes zonder deze als gelezen te markeren",
-        "button": "Voorbeeld",
-        "noNotes": "Geen meegeleverde release-notes gevonden",
-        "error": "Voorbeeld van release-notes laden mislukt"
-      },
       "onboardingPreview": {
         "title": "Voorbeeld van onboarding",
         "description": "Bekijk de onboardingschermen zonder machtigingen, modellen of de voltooiingsstatus te wijzigen",
@@ -575,7 +562,7 @@
       },
       "keyboardDiagnostic": {
         "title": "Toetsenborddiagnose",
-        "description": "Controleert of toetsenbordgebeurtenissen Handy bereiken. Alleen het aantal gebeurtenissen wordt vastgelegd — nooit welke toetsen je indrukt.",
+        "description": "Controleert of toetsenbordgebeurtenissen Echo bereiken. Alleen het aantal gebeurtenissen wordt vastgelegd — nooit welke toetsen je indrukt.",
         "run": "Diagnose van 10 s uitvoeren",
         "running": "Luisteren… druk je sneltoets een paar keer in (bijv. Option+Space)",
         "secureInputLabel": "Secure Input",
@@ -589,42 +576,16 @@
         "mouse": "Muis",
         "verdictBlocked": "Secure Input blokkeert toetsgebeurtenissen — sneltoetsen met een gewone toets kunnen pas weer werken als dit is opgelost.",
         "verdictSuspicious": "Er kwamen wel modificatiegebeurtenissen binnen, maar geen toetsgebeurtenissen — iets onderdrukt toetsen terwijl Secure Input als uitgeschakeld wordt gemeld. Meld dit op GitHub.",
-        "verdictOk": "Toetsgebeurtenissen bereiken Handy normaal.",
+        "verdictOk": "Toetsgebeurtenissen bereiken Echo normaal.",
         "verdictNoEvents": "Geen gebeurtenissen vastgelegd — heb je tijdens de test toetsen ingedrukt?",
         "failed": "Diagnose mislukt: {{error}}"
       }
     },
     "about": {
-      "title": "Over Handy",
-      "version": {
-        "title": "Versie",
-        "description": "Huidige versie van Handy"
-      },
-      "whatsNewUpdates": {
-        "label": "Toon 'Wat is er nieuw'",
-        "description": "Release-notes tonen nadat Handy is bijgewerkt"
-      },
+      "title": "Over Echo",
       "appDataDirectory": {
         "title": "App-datamap",
-        "description": "Locatie waar Handy de gegevens opslaat"
-      },
-      "sourceCode": {
-        "title": "Broncode",
-        "description": "Bekijk de broncode en draag bij",
-        "button": "Bekijk op GitHub"
-      },
-      "supportDevelopment": {
-        "title": "Ontwikkeling ondersteunen",
-        "description": "Help ons om te blijven bouwen aan Handy",
-        "button": "Doneren"
-      },
-      "acknowledgments": {
-        "title": "Dankbetuigingen",
-        "ggml": {
-          "title": "ggml",
-          "description": "Krachtige tensorbibliotheek voor lokale AI-verwerking",
-          "details": "Handy's lokale spraak-naar-tekst is gebouwd op transcribe.cpp en ggml. Met dank aan het geweldige werk van Georgi Gerganov en alle bijdragers."
-        }
+        "description": "Locatie waar Echo de gegevens opslaat"
       }
     }
   },
@@ -643,9 +604,6 @@
     "portableUpdateBrowseMessage": "Draagbare (portable) installaties kunnen niet automatisch worden bijgewerkt. Download de nieuwste versie voor je systeem van GitHub Releases en installeer die in dezelfde map — je Data/-map (instellingen, modellen, opnames) blijft behouden.",
     "portableUpdateBrowseButton": "GitHub Releases openen"
   },
-  "whatsNew": {
-    "title": "Nieuw in Handy v{{version}}"
-  },
   "common": {
     "loading": "Laden...",
     "delete": "Verwijderen",
@@ -657,7 +615,7 @@
     "noOptionsFound": "Geen opties gevonden"
   },
   "accessibility": {
-    "permissionsDescription": "Handy heeft toegankelijkheidsmachtigingen nodig om getranscribeerde tekst te kunnen typen.",
+    "permissionsDescription": "Echo heeft toegankelijkheidsmachtigingen nodig om getranscribeerde tekst te kunnen typen.",
     "openSettings": "Systeeminstellingen openen"
   },
   "errors": {
@@ -680,11 +638,11 @@
   },
   "appLanguage": {
     "title": "Interfacetaal",
-    "description": "Wijzig de taal van de Handy-interface"
+    "description": "Wijzig de taal van de Echo-interface"
   },
   "theme": {
     "title": "App-thema",
-    "description": "Kies of Handy het systeemthema volgt of licht of donker blijft",
+    "description": "Kies of Echo het systeemthema volgt of licht of donker blijft",
     "options": {
       "system": "Systeem",
       "light": "Licht",
@@ -703,7 +661,6 @@
     "blockedNoCulprit_other": "macOS blokkeert tijdelijk {{count}} sneltoetsen",
     "recorderBlockedWithCulprit": "{{name}} blokkeert mogelijk wijzigingen aan sneltoetsen",
     "recorderBlockedNoCulprit": "macOS blokkeert tijdelijk wijzigingen aan sneltoetsen",
-    "learnMore": "Hoe je dit oplost",
     "recorderBlocked": "Sneltoetsen kunnen nu niet worden opgenomen — Secure Input van macOS blokkeert toetsgebeurtenissen. Los eerst de Secure Input-waarschuwing op.",
     "dismiss": "Sluiten"
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { ProgressBar as HeroProgressBar } from "@heroui/react";
 
 export interface ProgressData {
   id: string;
@@ -41,11 +42,11 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
     return (
       <div className={`flex items-center gap-3 ${className}`}>
-        <progress
-          value={percentage}
-          max={100}
-          className={`${progressClasses} [&::-webkit-progress-bar]:rounded-full [&::-webkit-progress-bar]:bg-mid-gray/20 [&::-webkit-progress-value]:rounded-full [&::-webkit-progress-value]:bg-logo-primary`}
-        />
+        <HeroProgressBar aria-label={item.label || "Progress"} value={percentage} className={progressClasses}>
+          <HeroProgressBar.Track>
+            <HeroProgressBar.Fill />
+          </HeroProgressBar.Track>
+        </HeroProgressBar>
         {(showSpeed || showLabel) && (
           <div className="text-xs text-text/60 tabular-nums min-w-fit">
             {showLabel && item.label && (

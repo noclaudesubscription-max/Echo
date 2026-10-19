@@ -1,4 +1,5 @@
 import React from "react";
+import { Chip } from "@heroui/react";
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -6,23 +7,25 @@ interface BadgeProps {
   className?: string;
 }
 
+const variantMap: Record<
+  NonNullable<BadgeProps["variant"]>,
+  { color: "default" | "accent" | "success" | "warning" | "danger"; variant: "primary" | "secondary" | "tertiary" | "soft" }
+> = {
+  primary: { color: "accent", variant: "primary" },
+  success: { color: "success", variant: "soft" },
+  secondary: { color: "default", variant: "secondary" },
+};
+
 const Badge: React.FC<BadgeProps> = ({
   children,
   variant = "primary",
   className = "",
 }) => {
-  const variantClasses = {
-    primary: "bg-logo-primary",
-    success: "bg-green-500/20 text-green-400",
-    secondary: "bg-mid-gray/20 text-text/70",
-  };
-
+  const { color, variant: heroVariant } = variantMap[variant];
   return (
-    <span
-      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${variantClasses[variant]} ${className}`}
-    >
+    <Chip color={color} variant={heroVariant} className={className}>
       {children}
-    </span>
+    </Chip>
   );
 };
 

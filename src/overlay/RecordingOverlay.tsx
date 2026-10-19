@@ -40,7 +40,7 @@ const RecordingOverlay: React.FC = () => {
   // waits for the load to be slow so fast loads don't flash it mid-speech.
   const [modelLoading, setModelLoading] = useState(false);
   const [modelLoadSlow, setModelLoadSlow] = useState(false);
-  const modelLoadTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const modelLoadTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   // Latched per Live session: once the loading notice has opened the panel, keep
   // it open after the load so it doesn't collapse and reopen when text arrives.
   const [loadNoticeShown, setLoadNoticeShown] = useState(false);

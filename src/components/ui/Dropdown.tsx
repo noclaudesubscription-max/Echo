@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
+import { Dropdown as HeroDropdown, Button, Label, Description } from "@heroui/react";
 
 export interface DropdownOption {
   value: string;
@@ -19,117 +20,58 @@ interface DropdownProps {
   onOpen?: () => void;
 }
 
+// Adapter: keeps this app's flat (options/selectedValue/onSelect) API while
+// rendering HeroUI's compound Dropdown pieces underneath, so every existing
+// caller (ModelDropdown, settings rows, ...) needs no changes.
 export const Dropdown: React.FC<DropdownProps> = ({
   options,
   selectedValue,
   onSelect,
   className = "",
-  menuClassName,
+  menuClassName = "",
   placeholder = "Select an option...",
   disabled = false,
   onOpen,
 }) => {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const selectedOption = options.find(
-    (option) => option.value === selectedValue,
-  );
-
-  const handleSelect = (value: string) => {
-    onSelect(value);
-    setIsOpen(false);
-  };
-
-  const handleToggle = () => {
-    if (disabled) return;
-    if (!isOpen) onOpen?.();
-    setIsOpen(!isOpen);
-  };
+  const selectedOption = options.find((option) => option.value === selectedValue);
 
   return (
-    <div className={`relative ${className}`} ref={dropdownRef}>
-      <button
-        type="button"
-        className={`px-2 py-[5px] text-sm font-semibold bg-mid-gray/10 border border-mid-gray/80 rounded-md min-w-[200px] w-full text-start grid grid-cols-[1fr_auto] gap-2 items-center transition-all duration-150 ${
-          disabled
-            ? "opacity-50 cursor-not-allowed"
-            : "hover:bg-logo-primary/10 cursor-pointer hover:border-logo-primary"
-        }`}
-        onClick={handleToggle}
-        disabled={disabled}
+    <HeroDropdown
+      className={className}
+      onOpenChange={(isOpen: boolean) => {
+        if (isOpen) onOpen?.();
+      }}
+    >
+      <Button
+        variant="secondary"
+        isDisabled={disabled}
+        className="min-w-[200px] w-full text-start grid grid-cols-[1fr_auto] gap-2 items-center"
       >
         <span className="truncate">{selectedOption?.label || placeholder}</span>
-        <svg
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "transform rotate-180" : ""}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </button>
-      {isOpen && !disabled && (
-        <div
-          className={`absolute top-full mt-1 bg-background border border-mid-gray/80 rounded-md shadow-lg z-50 max-h-60 overflow-y-auto ${
-            menuClassName ?? "left-0 right-0"
-          }`}
+      </Button>
+      <HeroDropdown.Popover className={`max-h-60 overflow-y-auto ${menuClassName}`}>
+        <HeroDropdown.Menu
+          onAction={(key) => onSelect(String(key))}
+          disabledKeys={options.filter((o) => o.disabled).map((o) => o.value)}
+          selectedKeys={selectedValue ? [selectedValue] : []}
         >
           {options.length === 0 ? (
-            <div className="px-2 py-1 text-sm text-mid-gray">
-              {t("common.noOptionsFound")}
-            </div>
+            <HeroDropdown.Item id="__empty" textValue={t("common.noOptionsFound")} isDisabled>
+              <Label>{t("common.noOptionsFound")}</Label>
+            </HeroDropdown.Item>
           ) : (
             options.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                className={`w-full text-sm text-start hover:bg-logo-primary/10 transition-colors duration-150 ${
-                  option.description ? "px-3 py-2" : "px-2 py-1"
-                } ${
-                  selectedValue === option.value ? "bg-logo-primary/20" : ""
-                } ${option.disabled ? "opacity-50 cursor-not-allowed" : ""}`}
-                onClick={() => handleSelect(option.value)}
-                disabled={option.disabled}
-              >
-                <span
-                  className={`block whitespace-normal break-words ${
-                    option.description || selectedValue === option.value
-                      ? "font-semibold"
-                      : ""
-                  }`}
-                >
-                  {option.label}
-                </span>
-                {option.description && (
-                  <span className="mt-0.5 block whitespace-normal text-xs font-normal leading-snug text-mid-gray">
-                    {option.description}
-                  </span>
-                )}
-              </button>
+              <HeroDropdown.Item key={option.value} id={option.value} textValue={option.label}>
+                <div className="flex flex-col">
+                  <Label>{option.label}</Label>
+                  {option.description && <Description>{option.description}</Description>}
+                </div>
+              </HeroDropdown.Item>
             ))
           )}
-        </div>
-      )}
-    </div>
+        </HeroDropdown.Menu>
+      </HeroDropdown.Popover>
+    </HeroDropdown>
   );
 };

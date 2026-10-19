@@ -8,7 +8,7 @@ fn main() {
     // backend modules (the `dynamic-backends` posture in Cargo.toml). Bake an
     // $ORIGIN-relative rpath into the `handy` binary so it finds libtranscribe
     // next to it in the package — deb/rpm install into the app-private
-    // `/usr/lib/Handy` (the dir tauri already uses for resources; keeps
+    // `/usr/lib/Echo` (the dir tauri already uses for resources; keeps
     // Handy's libs out of the ldconfig-scanned `/usr/lib`, issue #1639) while
     // the AppImage keeps them in `usr/lib` (linuxdeploy's layout), hence both
     // entries. transcribe's
@@ -20,7 +20,7 @@ fn main() {
     }
 
     // CPAL (handy-recorder's and rodio's) links two CoreAudio functions that
-    // only exist on macOS 14.2+. Weak-link the framework so Handy still
+    // only exist on macOS 14.2+. Weak-link the framework so Echo still
     // launches on older macOS (minimumSystemVersion is 10.15).
     if std::env::var("CARGO_CFG_TARGET_OS").as_deref() == Ok("macos") {
         println!("cargo:rustc-link-arg=-Wl,-weak_framework,CoreAudio");
@@ -45,7 +45,7 @@ fn main() {
 /// target is older than the SDK (CI builds for macOS 11.0), clang lowers those
 /// checks to calls into `libclang_rt.osx.a`, which rustc does not link
 /// (`-nodefaultlibs`). ort-sys used to add it for its own static ONNX Runtime;
-/// without ORT, Handy has to. Local builds targeting the host macOS fold the
+/// without ORT, Echo has to. Local builds targeting the host macOS fold the
 /// checks away, which is why only CI hit the undefined symbol.
 fn link_clang_rt_osx() {
     let output = std::process::Command::new("clang")
@@ -69,13 +69,13 @@ fn link_clang_rt_osx() {
 
 /// Stage the MSVC runtime DLLs into `transcribe-libs/` for app-local deployment.
 ///
-/// Handy's native stack links the VC++ runtime dynamically (/MD). Shipping the
+/// Echo's native stack links the VC++ runtime dynamically (/MD). Shipping the
 /// DLLs beside `handy.exe` covers machines with no redistributable installed and
 /// machines whose system redist is older than the CI toolset (issue #1527).
 ///
 /// Driven by `HANDY_VC_REDIST_DIRS`, set by CI to the redist dirs from the same
 /// Visual Studio install that compiled the native code. Copies only the runtime
-/// DLL families Handy imports and no-ops when the env var is unset.
+/// DLL families Echo imports and no-ops when the env var is unset.
 fn stage_vc_runtime_dlls() {
     use std::path::PathBuf;
 
@@ -146,7 +146,7 @@ fn stage_vc_runtime_dlls() {
 /// ggml modules) may be the same dir — the `BTreeSet` below dedups them.
 ///
 /// Where the staged dir lands: Windows bundles it beside `handy.exe` (DLLs resolve
-/// from the exe dir); Linux deb/rpm map it into the app-private `/usr/lib/Handy`
+/// from the exe dir); Linux deb/rpm map it into the app-private `/usr/lib/Echo`
 /// and the AppImage into `usr/lib`, both on the binary's rpath.
 fn stage_transcribe_runtime_libs() {
     use std::collections::BTreeSet;

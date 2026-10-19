@@ -287,13 +287,6 @@ fn initialize_core_logic(app_handle: &AppHandle) {
                 // Full explanation lives in the settings-window banner
                 show_main_window(app);
             }
-            "check_updates" => {
-                let settings = settings::get_settings(app);
-                if settings::update_checks_effectively_enabled(&settings) {
-                    show_main_window(app);
-                    let _ = app.emit("check-for-updates", ());
-                }
-            }
             "copy_last_transcript" => {
                 tray::copy_last_transcript(app);
             }
@@ -361,18 +354,6 @@ fn initialize_core_logic(app_handle: &AppHandle) {
 
     // Create the recording overlay window (hidden by default)
     utils::create_recording_overlay(app_handle);
-}
-
-#[tauri::command]
-#[specta::specta]
-fn trigger_update_check(app: AppHandle) -> Result<(), String> {
-    let settings = settings::get_settings(&app);
-    if !settings::update_checks_effectively_enabled(&settings) {
-        return Ok(());
-    }
-    app.emit("check-for-updates", ())
-        .map_err(|e| e.to_string())?;
-    Ok(())
 }
 
 #[tauri::command]
@@ -712,7 +693,6 @@ pub fn run(cli_args: CliArgs) {
             shortcut::handy_keys::stop_handy_keys_recording,
             secure_input::get_secure_input_status,
             secure_input::run_keyboard_diagnostic,
-            trigger_update_check,
             show_main_window_command,
             commands::cancel_operation,
             commands::is_portable,
@@ -847,7 +827,7 @@ pub fn run(cli_args: CliArgs) {
         builder = builder.plugin(tauri_nspanel::init());
     }
 
-    // Single-instance forwards CLI args to an already-running Handy and exits.
+    // Single-instance forwards CLI args to an already-running Echo and exits.
     // That would make the headless path
     // (--transcribe-file/--list-devices/--list-models) a silent no-op whenever the
     // app is already open, so skip it in headless mode and run a standalone
@@ -878,7 +858,6 @@ pub fn run(cli_args: CliArgs) {
     let mut app = builder
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_process::init())
-        .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_clipboard_manager::init())
         .plugin(tauri_plugin_macos_permissions::init())
@@ -944,7 +923,7 @@ pub fn run(cli_args: CliArgs) {
             // for portable mode (redirects WebView2 cache to portable Data dir)
             let mut win_builder =
                 tauri::WebviewWindowBuilder::new(app, "main", tauri::WebviewUrl::App("/".into()))
-                    .title("Handy")
+                    .title("Echo")
                     .inner_size(680.0, 570.0)
                     .min_inner_size(680.0, 570.0)
                     .resizable(true)
